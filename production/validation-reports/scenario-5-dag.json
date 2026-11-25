@@ -1,0 +1,104 @@
+{
+  "orchestrator": "DIR-01",
+  "requested_skills_count": 23,
+  "waves": [
+    {
+      "wave_index": 1,
+      "parallel_skills": [
+        "DIR-01"
+      ]
+    },
+    {
+      "wave_index": 2,
+      "parallel_skills": [
+        "DIR-03",
+        "DIR-04"
+      ]
+    },
+    {
+      "wave_index": 3,
+      "parallel_skills": [
+        "DIR-05"
+      ]
+    },
+    {
+      "wave_index": 4,
+      "parallel_skills": [
+        "GD-01",
+        "WLD-02",
+        "WLD-03"
+      ]
+    },
+    {
+      "wave_index": 5,
+      "parallel_skills": [
+        "ART-01",
+        "WLD-01"
+      ]
+    },
+    {
+      "wave_index": 6,
+      "parallel_skills": [
+        "ART-04",
+        "NAR-01",
+        "WLD-04"
+      ]
+    },
+    {
+      "wave_index": 7,
+      "parallel_skills": [
+        "ENG-01"
+      ]
+    },
+    {
+      "wave_index": 8,
+      "parallel_skills": [
+        "NAR-03"
+      ]
+    },
+    {
+      "wave_index": 9,
+      "parallel_skills": [
+        "AI-04",
+        "ART-03"
+      ]
+    },
+    {
+      "wave_index": 10,
+      "parallel_skills": [
+        "AI-02",
+        "ART-08"
+      ]
+    },
+    {
+      "wave_index": 11,
+      "parallel_skills": [
+        "ENG-06"
+      ]
+    },
+    {
+      "wave_index": 12,
+      "parallel_skills": [
+        "ENG-07"
+      ]
+    },
+    {
+      "wave_index": 13,
+      "parallel_skills": [
+        "PRD-04"
+      ]
+    },
+    {
+      "wave_index": 14,
+      "parallel_skills": [
+        "PRD-05"
+      ]
+    },
+    {
+      "wave_index": 15,
+      "parallel_skills": [
+        "DIR-07"
+      ]
+    }
+  ]
+}

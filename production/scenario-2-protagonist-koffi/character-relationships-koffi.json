@@ -1,0 +1,34 @@
+{
+  "protagonist_id": "CHR-PROTAG-KOFFI",
+  "family_id": "FAM-KABONGO",
+  "home_district_id": "DST-KALAMU",
+  "relationships": [
+    {
+      "target_id": "CHR-ALLY-PAPA-ETIENNE",
+      "relation_type": "FAMILY_MENTOR",
+      "trust_level": 0.95,
+      "narrative_arc": "Garde l'atelier de Kalamu et ancre Koffi dans l'éthique des artisans kinois."
+    },
+    {
+      "target_id": "CHR-ALLY-AMINA",
+      "relation_type": "STRATEGIC_ALLY",
+      "affiliation_id": "ORG-RADIO-KIN",
+      "trust_level": 0.88,
+      "narrative_arc": "Diffuse les preuves sur Radio Lokole 104.5 FM et coordonne les informateurs de Matonge et Bandal."
+    },
+    {
+      "target_id": "CHR-ANTAG-MUKENDI",
+      "relation_type": "PRIMARY_ANTAGONIST",
+      "affiliation_id": "ORG-CARTEL-FLEUVE",
+      "trust_level": 0.0,
+      "narrative_arc": "Contrôle les docks ONATRA (LOC-GOMBE-PORT) et cherche à exproprier FAM-KABONGO."
+    },
+    {
+      "target_id": "ORG-POLICE-PCR",
+      "relation_type": "SYSTEMIC_AUTHORITY",
+      "system_id": "SYS-LAW-ESCALATION",
+      "trust_level": 0.5,
+      "narrative_arc": "Tolérance modulée par SYS-WLD-REPUTATION et le respect du code routier aux carrefours."
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+loc_key,speaker_id,source_fr_cd,target_ln_cd,target_en_us,ui_container_max_chars
+SUB_MSN001_KOFFI_N01,CHR-PROTAG-KOFFI,[KOFFI] : Mbote vieux ! Voici le laissez-passer ONATRA pour le quai numéro quatre.,[KOFFI] : Mbote kulutu! Talá mokanda ya ONATRA mpo na libongo ya minei.,[KOFFI] : Mbote boss! Here is the signed ONATRA pass for dock number four.,120
+SUB_MSN001_AMINA_N02,CHR-ALLY-AMINA,"[AMINA] : Kɛbá Koffi, les hommes de Mukendi verrouillent la grue ! Prends les bilɔkɔ et tɔ́kɛndɛ́ !","[AMINA] : Kɛbá Koffi, bato ya Mukendi bakangi grue! Kamatá bilɔkɔ mpe tɔ́kɛndɛ́!","[AMINA] : Kɛbá Koffi, Mukendi's men are locking down the crane! Grab the bilɔkɔ and tɔ́kɛndɛ́!",140

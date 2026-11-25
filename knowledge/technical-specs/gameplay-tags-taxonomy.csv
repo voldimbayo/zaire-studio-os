@@ -1,0 +1,22 @@
+tag_name,category,owner_skill,consumers,description
+State.Character.Combat.Engaged,COMBAT,GD-05,ENG-02|AI-01|AUD-03,Indique que le personnage est engagé en affrontement actif (active le stem musical combat et le verrouillage caméra).
+State.Character.Combat.Parrying,COMBAT,GD-05,ENG-02|ART-05,Fenêtre active de parade au corps-à-corps ou à la machette (ITM-WPN-MACHETTE).
+State.Character.Stealth.Concealed,STEALTH,GD-01,ENG-02|AI-01|GD-07,Le joueur est dissimulé dans une zone d'ombre ou derrière un couvert géométrique.
+State.Character.Stealth.Disguised,STEALTH,GD-01,ENG-02|AI-01|NAR-04,Le joueur possède une accréditation valide (ex: ITM-DOC-PASSEPORT au port ONATRA).
+Ability.Melee.LightAttack,ABILITY,GD-05,ENG-02|ART-05|AUD-02,Attaque rapide de mêlée consommant peu d'endurance.
+Ability.Melee.HeavyAttack,ABILITY,GD-05,ENG-02|ART-05|AUD-02,Attaque lourde brisant la garde ennemie.
+Ability.Movement.Vault,MOVEMENT,GD-01,ENG-02|ART-05|WLD-05,Franchissement dynamique d'un obstacle bas (hauteur ~100 cm via Motion Warping).
+Vehicle.Type.MotoWewa,VEHICLE,GD-06,ENG-05|AI-03|AUD-02,Identifie un deux-roues agile VEH-MOTO-WEWA-01 autorisé à slalomer entre les voies ZoneGraph.
+Vehicle.Type.HeavyBus,VEHICLE,GD-06,ENG-05|AI-03|AUD-02,Identifie un véhicule lourd VEH-BUS-TRANSCO-01 prioritaire sur les artères principales.
+Vehicle.Type.PolicePCR,VEHICLE,GD-06,ENG-05|AI-03|AI-04|AUD-02,Identifie un véhicule d'intervention VEH-POLICE-PICKUP-01 de la PCR prioritaire avec sirène et capacité de barrage.
+World.District.Gombe,WORLD,WLD-01,WLD-04|AI-02|AUD-01|ART-07,Tag de contexte spatial actif lorsque le joueur se trouve dans DST-GOMBE.
+World.District.Matonge,WORLD,WLD-01,WLD-04|AI-02|AUD-01|ART-07,Tag de contexte spatial actif lorsque le joueur se trouve dans DST-MATONGE.
+World.District.Limete,WORLD,WLD-01,WLD-04|AI-02|AUD-01|ART-07,Tag de contexte spatial actif lorsque le joueur se trouve dans DST-LIMETE.
+World.District.Bandal,WORLD,WLD-01,WLD-04|AI-02|AUD-01|ART-07,Tag de contexte spatial actif lorsque le joueur se trouve dans DST-BANDAL (Bandalungwa-Sud).
+World.Weather.TropicalStorm,WEATHER,ART-07,ART-09|AUD-02|GD-06|AI-02,Averse équatoriale active : réduit la friction route, déclenche Niagara pluie et dispersion des foules.
+State.Law.AlertLevel.1_TrafficInfraction,LAW,AI-04,AI-01|AI-03|GD-03|NAR-04,Infraction routière ou accrochage devant un agent ORG-POLICE-PCR : coup de sifflet, injonction d'arrêt, résolution par négociation ou amende Mosolo.
+State.Law.AlertLevel.2_RoadblockPursuit,LAW,AI-04,AI-01|AI-03|ENG-05|AUD-03,Refus d'obtempérer ou délit majeur : déploiement de barrages mobiles aux ronds-points ZoneGraph et poursuite par 2 unités VEH-POLICE-PICKUP-01.
+State.Law.AlertLevel.3_SectorLockdown,LAW,AI-04,AI-01|AI-03|GD-02|AUD-03,Bouclage sécuritaire du secteur par ORG-POLICE-PCR et ORG-CARTEL-FLEUVE : filtrage strict des ponts et axes majeurs.
+State.Emergency.MedicalDispatch,EMERGENCY,AI-04,AI-02|AI-03|AUD-02,Accident grave ou blessés civils : couloir de priorité ZoneGraph ouvert pour ORG-URGENCE-FLUVIALE et cordon de foule AI-02.
+UI.Layer.HUD,UI,GD-07,ENG-02|PRD-06,Couche Common UI correspondant au HUD minimaliste en jeu.
+UI.Layer.DiegeticPhone,UI,GD-07,ENG-02|NAR-04|PRD-06,Couche Common UI du téléphone diégétique de Koffi (messages, carte de Kinshasa, radio).

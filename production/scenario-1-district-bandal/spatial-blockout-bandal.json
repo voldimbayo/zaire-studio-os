@@ -1,0 +1,11 @@
+{
+  "blockout_id": "BLK-BANDAL-HUB-01",
+  "location_id": "LOC-BANDAL-LUMUMBA-HUB",
+  "district_id": "DST-BANDAL",
+  "min_corridor_width_cm": 380.0,
+  "melee_arena_min_width_cm": 550.0,
+  "min_ceiling_height_cm": 360.0,
+  "low_cover_height_cm": 100.0,
+  "high_cover_height_cm": 220.0,
+  "min_wewa_lane_gap_cm": 150.0
+}

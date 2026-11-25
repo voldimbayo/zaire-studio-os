@@ -1,0 +1,175 @@
+# =============================================================================
+# ZAÏRE — .gitignore racine
+# Écosystème : ZAÏRE STUDIO OS (Python, skills, knowledge) · Unreal Engine 5.8 · Houdini 22
+# Politique détaillée : docs/gitignore-policy.md
+#
+# Principe : on ignore ce qui est RÉGÉNÉRABLE (caches, builds, sorties de simulation)
+# ou PRIVÉ (secrets, configs locales). Tout le reste est suivi.
+#
+# ATTENTION Windows : Git y utilise core.ignorecase=true. Un motif « build/ »
+# ignorerait aussi « Build/ » d'Unreal. Les motifs génériques ci-dessous ont été
+# choisis pour ne heurter aucun dossier source (Content/, Config/, Source/, Plugins/,
+# Build/, skills/, knowledge/, releases/...).
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# 1. Unreal Engine 5.8
+#    Suivis : *.uproject, *.uplugin, Content/, Config/, Source/, Plugins/,
+#             Build/ (icônes, manifestes de plateforme), .vsconfig
+# -----------------------------------------------------------------------------
+# Sorties de compilation et caches (projet ET plugins, à toute profondeur)
+Binaries/
+Intermediate/
+DerivedDataCache/
+Saved/
+# Shaders de debug
+ShaderDebugInfo/
+# Builds packagés / cookés
+Packaged/
+ArchivedBuilds/
+StagedBuilds/
+# Fichiers de projet IDE générés par « Generate Project Files »
+*.sln
+*.suo
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.opendb
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.code-workspace
+*.xcodeproj/
+*.xcworkspace/
+compile_commands.json
+# Visual Studio / Rider
+.vs/
+.idea/
+*.DotSettings.user
+# Fichiers temporaires d'écriture d'assets
+*.uasset.tmp
+*.umap.tmp
+
+
+# -----------------------------------------------------------------------------
+# 2. Houdini 22
+#    Suivis : *.hip, *.hiplc, *.hipnc, *.hda, *.hdalc, *.hdanc, *.otl, scripts
+#    Convention : un fichier volumineux à conserver (VDB, bgeo de référence)
+#    va dans un dossier SourceArt/ — il est alors toujours suivi.
+# -----------------------------------------------------------------------------
+# Sauvegardes automatiques ($HIP/backup/<scene>_bakN.hip) et crash dumps
+*_bak[0-9]*.hip
+*_bak[0-9]*.hiplc
+*_bak[0-9]*.hipnc
+crash.*.hip
+crash.*.hiplc
+crash.*.hipnc
+# Caches de géométrie et de simulation
+*.bgeo
+*.bgeo.*
+*.sim
+*.simdata
+*.vdb
+*.pc
+*.ifd
+*.ifd.*
+# Textures mipmappées générées par Houdini/Mantra/Karma
+*.rat
+# Exports intermédiaires et flipbooks
+*.abc.tmp
+*.usd.tmp
+flipbook/
+# Exception : sources volumineuses volontairement versionnées
+!**/SourceArt/**/*.bgeo
+!**/SourceArt/**/*.bgeo.*
+!**/SourceArt/**/*.vdb
+!**/SourceArt/**/*.sim
+
+
+# -----------------------------------------------------------------------------
+# 3. Développement logiciel (Python, Node, outillage)
+# -----------------------------------------------------------------------------
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.coverage
+.coverage.*
+htmlcov/
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.pnpm-store/
+# Logs et temporaires
+*.log
+logs/
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+~$*
+# Éditeurs : VS Code (on garde les recommandations d'extensions partagées)
+.vscode/*
+!.vscode/extensions.json
+# Systèmes d'exploitation
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+
+# -----------------------------------------------------------------------------
+# 4. ZAÏRE STUDIO OS
+#    Aucun dossier du framework n'est ignoré : skills/ (57 SKILL.md),
+#    knowledge/, architecture/, research/, schemas/, templates/, production/,
+#    tools/, tests/, audit/, docs/ et releases/ (livrables ZIP) sont suivis.
+#    Seuls leurs caches Python (__pycache__/) sont exclus, via la section 3.
+# -----------------------------------------------------------------------------
+
+
+# -----------------------------------------------------------------------------
+# 5. Secrets, identifiants et configurations locales
+#    Ne jamais versionner : clés, certificats privés, jetons, configs personnelles.
+#    Les modèles partagés (*.example) restent suivis.
+#    Pas de motif large « *token* » / « *secret* » : il ignorerait des sources
+#    légitimes (ex. skills/.../frame-data-and-attack-tokens.md).
+# -----------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*.keystore
+*.jks
+*.ppk
+id_rsa*
+id_ed25519*
+credentials.json
+service-account*.json
+secrets.json
+secrets.yaml
+secrets.yml
+*.secret
+# Configurations locales par poste
+*.local.json
+*.local.ini
+*.local.yaml
+*.local.yml
+.claude/settings.local.json
+CLAUDE.local.md

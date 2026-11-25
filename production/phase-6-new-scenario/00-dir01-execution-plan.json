@@ -1,0 +1,850 @@
+{
+  "orchestration_id": "ORC-2026-P6-001",
+  "schema_version": "1.1.0",
+  "orchestrator_skill": "DIR-01",
+  "scenario_slug": "phase-6-new-scenario-kinsuka-convoy",
+  "user_intent": "Orchestrer en vagues DAG strictement acycliques la conception et la validation multi-agents d'un nouveau lieu urbain kinois (LOC-NGALIEMA-KINSUKA-CROSSING dans DST-NGALIEMA) et d'une nouvelle mission principale (MSN-MAIN-009-KINSUKA-CONVOY) où Koffi (CHR-PROTAG-KOFFI), appuyé par Mama Luzolo (CHR-ALLY-MAMA-LUZOLO), intercepte un registre hydrologique et tarifaire clandestin (ITM-DOC-KINSUKA-LEDGER) à bord d'un convoi à plaques diplomatiques (VEH-CONVOY-DIPLO-01) du Syndicat du Fleuve (ORG-CARTEL-FLEUVE) immobilisé dans la congestion routière des pentes de Kinsuka sous surveillance graduée de la PCR (ORG-POLICE-PCR), dans le respect des budgets synthétiques Unreal Engine 5.8, Houdini 22.0 et Wwise.",
+  "engine_validation_status": {
+    "binary_execution_status": "NOT TESTED",
+    "performance_figures_classification": "SYNTHETIC_TARGET_ALLOCATION",
+    "target_stack": {
+      "unreal_engine": "5.8 (World Partition 12800 cm, OFPA, Data Layers, ZoneGraph, MassEntity, MegaLights)",
+      "houdini": "22.0 (PDG TOPs, Copernicus DEM/RVT masks, ZoneGraph spline export)",
+      "wwise": "2024.1 (Max 64 physical voices, -23 LUFS broadcast target, STREAMER_SAFE mode)"
+    },
+    "audit_disclaimer": "Aucune compilation binaire UBT UE 5.8, cuisson HDA hython ni génération de SoundBank WwiseConsole n'est exécutée durant cette passe documentaire. Tous les budgets CPU/GPU/VRAM/Audio constituent des allocations cibles synthétiques (SYNTHETIC_TARGET_ALLOCATION / NOT TESTED)."
+  },
+  "referenced_entities": [
+    {
+      "id": "DST-NGALIEMA",
+      "category": "DISTRICT",
+      "name": "Commune de Ngaliema",
+      "status": "CONFIRMED",
+      "owner_skill": "WLD-01",
+      "registry_presence": true,
+      "notes": "Commune occidentale vallonnée longeant les rapides du fleuve Congo (Kinsuka/Mont Ngaliema). Densité foule de référence Couche 2 : Faible à Moyenne (~200 PNJ) ; Densité trafic : Moyenne. Attention : absence de fiche sensorielle détaillée en Section 2 de kinshasa-districts.md."
+    },
+    {
+      "id": "CHR-PROTAG-KOFFI",
+      "category": "CHARACTER",
+      "name": "Koffi Kabongo",
+      "status": "CONFIRMED",
+      "owner_skill": "NAR-03",
+      "registry_presence": true,
+      "notes": "Protagoniste principal, ancien coursier fluvial et mécanicien (capsule 180x42 cm, hauteur yeux 165 cm)."
+    },
+    {
+      "id": "CHR-ANTAG-MUKENDI",
+      "category": "CHARACTER",
+      "name": "Général Victor Mukendi",
+      "status": "CONFIRMED",
+      "owner_skill": "NAR-03",
+      "registry_presence": true,
+      "notes": "Antagoniste majeur contrôlant le consortium logistique clandestin lié à ORG-CARTEL-FLEUVE (référence lore amont du registre intercepté, non requis physiquement sur place)."
+    },
+    {
+      "id": "ORG-CARTEL-FLEUVE",
+      "category": "ORGANIZATION",
+      "name": "Syndicat du Fleuve",
+      "status": "CONFIRMED",
+      "owner_skill": "NAR-05",
+      "registry_presence": true,
+      "notes": "Organisation contrôlant la contrebande fluviale et opérant le convoi sous couverture diplomatique."
+    },
+    {
+      "id": "ORG-POLICE-PCR",
+      "category": "ORGANIZATION",
+      "name": "Police de Circulation Routière (PCR Kinshasa)",
+      "status": "CONFIRMED",
+      "owner_skill": "NAR-05",
+      "registry_presence": true,
+      "notes": "Unité tenant le poste de contrôle routier du carrefour en pente de Kinsuka (sifflets, barrages, escalade niveaux 1 à 3)."
+    },
+    {
+      "id": "ORG-TRANSCO",
+      "category": "ORGANIZATION",
+      "name": "Réseau de Transport Urbain",
+      "status": "CONFIRMED",
+      "owner_skill": "NAR-05",
+      "registry_presence": true,
+      "notes": "Opérateur des bus lourds structurant la congestion routière sur l'axe principal de Kinsuka."
+    },
+    {
+      "id": "ORG-URGENCE-FLUVIALE",
+      "category": "ORGANIZATION",
+      "name": "Brigade Sanitaire & Secours Urbain",
+      "status": "CONFIRMED",
+      "owner_skill": "NAR-05",
+      "registry_presence": true,
+      "notes": "Service d'intervention mobilisable par SYS-LAW-ESCALATION en cas d'accident grave ou collision multi-véhicules sur l'échangeur."
+    },
+    {
+      "id": "VEH-MOTO-WEWA-01",
+      "category": "VEHICLE",
+      "name": "Moto-Taxi Wewa 125cc",
+      "status": "CONFIRMED",
+      "owner_skill": "GD-06",
+      "registry_presence": true,
+      "notes": "Gabarit 205x80 cm, inter-file minimal ZoneGraph 130 cm, apte aux pentes en latérite."
+    },
+    {
+      "id": "VEH-TAXI-JAUNE-01",
+      "category": "VEHICLE",
+      "name": "Taxi Collectif Ketch Jaune",
+      "status": "CONFIRMED",
+      "owner_skill": "GD-06",
+      "registry_presence": true,
+      "notes": "Gabarit 440x180x150 cm, trafic collectif majeur du carrefour."
+    },
+    {
+      "id": "VEH-BUS-TRANSCO-01",
+      "category": "VEHICLE",
+      "name": "Bus Urbain Grand Gabarit",
+      "status": "CONFIRMED",
+      "owner_skill": "GD-06",
+      "registry_presence": true,
+      "notes": "Gabarit 1200x255x330 cm, forte inertie en côte créant des goulots d'étranglement naturels."
+    },
+    {
+      "id": "VEH-POLICE-PICKUP-01",
+      "category": "VEHICLE",
+      "name": "Tout-Terrain d'Intervention PCR",
+      "status": "CONFIRMED",
+      "owner_skill": "GD-06",
+      "registry_presence": true,
+      "notes": "Pick-up 4x4 d'intervention PCR (barrage niveau 2 et poursuite asphalte/latérite niveau 3)."
+    },
+    {
+      "id": "SYS-WLD-STREAMING",
+      "category": "SYSTEM",
+      "name": "Streaming Spatial World Partition",
+      "status": "CONFIRMED",
+      "owner_skill": "ENG-01",
+      "registry_presence": true,
+      "notes": "Grille World Partition 12800 cm, Data Layers et HLOD."
+    },
+    {
+      "id": "SYS-WLD-LANDMARKS",
+      "category": "SYSTEM",
+      "name": "Navigation Visuelle par Landmarks",
+      "status": "CONFIRMED",
+      "owner_skill": "WLD-04",
+      "registry_presence": true,
+      "notes": "Orientation diégétique via les Rapides de Kinsuka et la passerelle du marché en surplomb."
+    },
+    {
+      "id": "SYS-WLD-REPUTATION",
+      "category": "SYSTEM",
+      "name": "Réputation Dynamique & Relations Sociales par Quartier",
+      "status": "CONFIRMED",
+      "owner_skill": "GD-01",
+      "registry_presence": true,
+      "notes": "Alerte registre : ses dépendances actuelles listent DST-GOMBE|DST-MATONGE|DST-KALAMU ; l'extension à DST-NGALIEMA demeure PROPOSED."
+    },
+    {
+      "id": "SYS-STEALTH",
+      "category": "SYSTEM",
+      "name": "Infiltration Urbaine & Sociale",
+      "status": "CONFIRMED",
+      "owner_skill": "GD-01",
+      "registry_presence": true,
+      "notes": "Infiltration sociale dans la foule du marché/carrière et dissimulation géométrique entre véhicules immobilisés."
+    },
+    {
+      "id": "SYS-CMB-MELEE",
+      "category": "SYSTEM",
+      "name": "Combat Urbain Corps-à-Corps GAS",
+      "status": "CONFIRMED",
+      "owner_skill": "GD-05",
+      "registry_presence": true,
+      "notes": "Zones de mêlée éventuelles soumises au gabarit minimal de 500 cm de largeur."
+    },
+    {
+      "id": "SYS-CROWD-MASS",
+      "category": "SYSTEM",
+      "name": "Simulation de Foule Mass Entity",
+      "status": "CONFIRMED",
+      "owner_skill": "AI-02",
+      "registry_presence": true,
+      "notes": "Cible locale Kinsuka : 180-220 entités Mass Crowd (cohérent avec DST-NGALIEMA ~200 PNJ, sous budget 2.0 ms, hydratation ACharacter <= 25 m)."
+    },
+    {
+      "id": "SYS-TRAFFIC-ZONE",
+      "category": "SYSTEM",
+      "name": "Simulation de Trafic ZoneGraph",
+      "status": "CONFIRMED",
+      "owner_skill": "AI-03",
+      "registry_presence": true,
+      "notes": "Voies ZoneGraph 350 cm (avenue) / 400 cm (axe lourd), inter-file Wewa >= 130 cm, résolution de blocage en côte."
+    },
+    {
+      "id": "SYS-PHYS-CHAOS",
+      "category": "SYSTEM",
+      "name": "Simulation Physique Chaos UE5",
+      "status": "CONFIRMED",
+      "owner_skill": "ENG-05",
+      "registry_presence": true,
+      "notes": "Budget <= 1.5 ms (60 FPS), mise en sommeil des débris < 1.5 s."
+    },
+    {
+      "id": "SYS-LAW-ESCALATION",
+      "category": "SYSTEM",
+      "name": "Régulation Routière & Escalade Policière (PCR)",
+      "status": "CONFIRMED",
+      "owner_skill": "AI-04",
+      "registry_presence": true,
+      "notes": "Escalade graduée PCR Niveaux 1 à 3 articulée avec l'immunité apparente du convoi diplomatique."
+    },
+    {
+      "id": "SYS-TELEMETRY-ANALYTICS",
+      "category": "SYSTEM",
+      "name": "Télémétrie Playtest & Heatmaps Spatiales",
+      "status": "CONFIRMED",
+      "owner_skill": "PRD-05",
+      "registry_presence": true,
+      "notes": "Instrumentation asynchrone (< 0.1 ms CPU) mobilisée par ENG-07 et DIR-07 pour tracer les goulots d'étranglement et le frametime P99 par cellule World Partition."
+    },
+    {
+      "id": "LOC-NGALIEMA-KINSUKA-CROSSING",
+      "category": "LOCATION",
+      "name": "Carrefour & Passerelle du Marché des Rapides de Kinsuka",
+      "district_id": "DST-NGALIEMA",
+      "status": "PROPOSED",
+      "owner_skill": "WLD-04",
+      "registry_presence": false,
+      "notes": "Nouvelle entité PROPOSED : pentes abruptes en latérite surplombant les rapides du fleuve Congo, cours artisanales de taille de pierre/moellons, passerelle/marché de colline, nœud de transit encombré et poste PCR."
+    },
+    {
+      "id": "MSN-MAIN-009-KINSUKA-CONVOY",
+      "category": "MISSION",
+      "name": "Le Convoi des Rapides (Interception à Kinsuka)",
+      "district_id": "DST-NGALIEMA",
+      "status": "PROPOSED",
+      "owner_skill": "GD-02",
+      "registry_presence": false,
+      "notes": "Nouvelle mission principale PROPOSED : interception furtive ou systémique d'un registre hydrologique/tarifaire portuaire à bord d'un convoi diplomatique de ORG-CARTEL-FLEUVE bloqué dans le trafic de Kinsuka."
+    },
+    {
+      "id": "CHR-ALLY-MAMA-LUZOLO",
+      "category": "CHARACTER",
+      "name": "Mama Luzolo",
+      "district_id": "DST-NGALIEMA",
+      "status": "PROPOSED",
+      "owner_skill": "NAR-03",
+      "registry_presence": false,
+      "notes": "Nouvelle alliée locale PROPOSED : déléguée syndicale des artisans carriers de Kinsuka coordonnant la diversion et l'accès aux terrasses de concassage."
+    },
+    {
+      "id": "ITM-DOC-KINSUKA-LEDGER",
+      "category": "ITEM",
+      "name": "Registre Hydrologique & Tarifaire Clandestin du Fleuve",
+      "district_id": "DST-NGALIEMA",
+      "status": "PROPOSED",
+      "owner_skill": "GD-02",
+      "registry_presence": false,
+      "notes": "ID normalisé PROPOSED créé par DIR-01 (interdiction d'identifiant libre) pour l'objectif clé transporté par le convoi de ORG-CARTEL-FLEUVE."
+    },
+    {
+      "id": "VEH-CONVOY-DIPLO-01",
+      "category": "VEHICLE",
+      "name": "Berline/4x4 Blindé Léger à Plaques Diplomatiques (Convoi Cartel)",
+      "district_id": "DST-NGALIEMA",
+      "status": "PROPOSED",
+      "owner_skill": "GD-06",
+      "registry_presence": false,
+      "notes": "ID normalisé PROPOSED créé par DIR-01 pour les véhicules cibles de ORG-CARTEL-FLEUVE immobilisés sur ZoneGraph (doit respecter un gabarit compatible avec les voies de 350 cm sans inventer de tuning Chaos hors périmètre)."
+    },
+    {
+      "id": "ORG-SYNDICAT-CARRIERES-KINSUKA",
+      "category": "ORGANIZATION",
+      "name": "Collectif des Artisans Carriers de Kinsuka",
+      "district_id": "DST-NGALIEMA",
+      "status": "PROPOSED",
+      "owner_skill": "NAR-05",
+      "registry_presence": false,
+      "notes": "ID normalisé PROPOSED créé par DIR-01 pour encadrer le réseau syndical local de CHR-ALLY-MAMA-LUZOLO sans nom libre non tracé."
+    }
+  ],
+  "research_required_registry": [
+    {
+      "research_id": "RR-KINSUKA-OSM-001",
+      "status": "RESEARCH_REQUIRED",
+      "domain": "GIS / Urbanism (DST-NGALIEMA)",
+      "assigned_skills": ["WLD-03", "ENG-04"],
+      "description": "Largeurs exactes des voies primaires/secondaires OSM, pourcentages réels de pente routière, profils des caniveaux d'érosion et géométrie exacte des ouvrages de franchissement piétons/routiers à Kinsuka (Commune de Ngaliema)."
+    },
+    {
+      "research_id": "RR-KINSUKA-DEM-002",
+      "status": "RESEARCH_REQUIRED",
+      "status_note": "Aucun MNT SRTM/Copernicus réel chargé dans le dépôt",
+      "domain": "Topography & Hydrology (Kinsuka Rapids)",
+      "assigned_skills": ["WLD-03", "WLD-05", "ENG-04"],
+      "description": "Altimétrie DEM haute résolution, dénivelé exact entre la chaussée supérieure, les terrasses de carrières artisanales et la berge rocheuse des rapides de Kinsuka sur le fleuve Congo."
+    },
+    {
+      "research_id": "RR-KINSUKA-QUARRY-003",
+      "status": "RESEARCH_REQUIRED",
+      "domain": "Sociolinguistics & Artisanal Quarry Practices",
+      "assigned_skills": ["WLD-02", "NAR-04"],
+      "description": "Lexique authentique en lingala kinois (ln-CD) et français de Kinshasa (fr-CD) des concasseurs/carriers artisanaux de grès et moellons à Kinsuka, organisation réelle des coopératives locales et sensibilités sociales associées."
+    },
+    {
+      "research_id": "RR-KINSUKA-ACOUSTIC-004",
+      "status": "RESEARCH_REQUIRED",
+      "domain": "Acoustic Ecology & Sensory Signature (DST-NGALIEMA)",
+      "assigned_skills": ["WLD-02", "AUD-04"],
+      "description": "Signature sensorielle et niveau de masquage acoustique réel du grondement continu des rapides de Kinsuka combiné aux masses/marteaux des carrières (la Section 2 de kinshasa-districts.md ne documentant pas encore DST-NGALIEMA)."
+    },
+    {
+      "research_id": "RR-KINSUKA-DIPLO-PCR-005",
+      "status": "RESEARCH_REQUIRED",
+      "domain": "DRC Traffic Law & Diplomatic Protocol",
+      "assigned_skills": ["WLD-02", "AI-04"],
+      "description": "Protocole réglementaire exact de la PCR (ORG-POLICE-PCR) et nomenclature officielle des plaques diplomatiques en RDC lors d'un contrôle routier ou d'un blocage de circulation impliquant un convoi sous immunité."
+    }
+  ],
+  "dag_waves": [
+    {
+      "wave_index": 1,
+      "stratum": 0,
+      "parallel_tasks": [
+        {
+          "task_id": "TSK-P6-000",
+          "target_skill": "DIR-01",
+          "objective": "Qualifier les entités du scénario Kinsuka (DST-NGALIEMA), exécuter build_dag_plan.py sur les 13 skills retenus et émettre le plan d'exécution DAG ainsi que les 12 Task Envelopes aval.",
+          "required_output_template": "execution-plan-dag.json",
+          "output_artifact": "production/phase-6-new-scenario/00-dir01-execution-plan.json",
+          "upstream_artifacts": []
+        }
+      ]
+    },
+    {
+      "wave_index": 2,
+      "stratum": 1,
+      "parallel_tasks": [
+        {
+          "task_id": "TSK-P6-001",
+          "target_skill": "WLD-02",
+          "objective": "Établir le brief d'authenticité culturelle, sociale et sociolinguistique (fr-CD / ln-CD) du secteur des Rapides et carrières artisanales de Kinsuka (LOC-NGALIEMA-KINSUKA-CROSSING dans DST-NGALIEMA), cadrer l'ancrage culturel de Mama Luzolo (CHR-ALLY-MAMA-LUZOLO) et de ORG-SYNDICAT-CARRIERES-KINSUKA, proposer la signature sensorielle manquante de DST-NGALIEMA et isoler en RESEARCH_REQUIRED tout terme technique ou protocole diplomatique non vérifié.",
+          "context_entities": [
+            "DST-NGALIEMA",
+            "LOC-NGALIEMA-KINSUKA-CROSSING",
+            "CHR-PROTAG-KOFFI",
+            "CHR-ALLY-MAMA-LUZOLO",
+            "ORG-SYNDICAT-CARRIERES-KINSUKA",
+            "ORG-POLICE-PCR",
+            "ORG-CARTEL-FLEUVE"
+          ],
+          "constraints": {
+            "target_frametime_ms": 16.6,
+            "target_quality_frametime_ms": 33.3,
+            "max_npc_active": 24,
+            "min_corridor_width_cm": 350,
+            "languages": ["fr-CD", "ln-CD"],
+            "entity_status_ceiling": "PROPOSED"
+          },
+          "required_output_template": "cultural-brief-template.md",
+          "output_artifact": "production/phase-6-new-scenario/01-wld02-kinsuka-cultural-brief.md",
+          "upstream_artifacts": [
+            "production/phase-6-new-scenario/00-dir01-execution-plan.json",
+            "production/phase-6-new-scenario/00-dir01-orchestration-brief.md"
+          ]
+        },
+        {
+          "task_id": "TSK-P6-002",
+          "target_skill": "WLD-03",
+          "objective": "Spécifier la morphologie urbaine, la topographie en pentes de latérite, les typologies architecturales des cours de concassage/marché en surplomb et le profil de voirie de LOC-NGALIEMA-KINSUKA-CROSSING (DST-NGALIEMA) conformément à spatial-metrics.md, en balisant explicitement RR-KINSUKA-OSM-001 et RR-KINSUKA-DEM-002 comme RESEARCH_REQUIRED.",
+          "context_entities": [
+            "DST-NGALIEMA",
+            "LOC-NGALIEMA-KINSUKA-CROSSING",
+            "SYS-WLD-STREAMING",
+            "SYS-WLD-LANDMARKS",
+            "SYS-TRAFFIC-ZONE",
+            "VEH-MOTO-WEWA-01",
+            "VEH-TAXI-JAUNE-01",
+            "VEH-BUS-TRANSCO-01"
+          ],
+          "constraints": {
+            "target_frametime_ms": 16.6,
+            "target_quality_frametime_ms": 33.3,
+            "max_npc_active": 24,
+            "min_corridor_width_cm": 350,
+            "standard_lane_width_cm": 350,
+            "heavy_lane_width_cm": 400,
+            "min_sidewalk_width_cm": 250,
+            "world_partition_cell_cm": 12800,
+            "languages": ["fr-CD", "ln-CD"],
+            "entity_status_ceiling": "PROPOSED"
+          },
+          "required_output_template": "urban-architecture-spec-template.md",
+          "output_artifact": "production/phase-6-new-scenario/02-wld03-kinsuka-urban-architecture-spec.md",
+          "upstream_artifacts": [
+            "production/phase-6-new-scenario/00-dir01-execution-plan.json",
+            "production/phase-6-new-scenario/00-dir01-orchestration-brief.md"
+          ]
+        }
+      ]
+    },
+    {
+      "wave_index": 3,
+      "stratum": 2,
+      "parallel_tasks": [
+        {
+          "task_id": "TSK-P6-003",
+          "target_skill": "GD-02",
+          "objective": "Concevoir la structure systémique complète de la mission MSN-MAIN-009-KINSUKA-CONVOY à LOC-NGALIEMA-KINSUKA-CROSSING : objectifs, phases d'approche (infiltration sociale via CHR-ALLY-MAMA-LUZOLO, diversion de carrière/trafic, extraction de ITM-DOC-KINSUKA-LEDGER depuis VEH-CONVOY-DIPLO-01 de ORG-CARTEL-FLEUVE et exfiltration), états d'échec, intégration de ORG-POLICE-PCR et respect strict du plafond de 24 PNJ AI-01 actifs.",
+          "context_entities": [
+            "DST-NGALIEMA",
+            "LOC-NGALIEMA-KINSUKA-CROSSING",
+            "MSN-MAIN-009-KINSUKA-CONVOY",
+            "CHR-PROTAG-KOFFI",
+            "CHR-ALLY-MAMA-LUZOLO",
+            "CHR-ANTAG-MUKENDI",
+            "ORG-CARTEL-FLEUVE",
+            "ORG-SYNDICAT-CARRIERES-KINSUKA",
+            "ORG-POLICE-PCR",
+            "ITM-DOC-KINSUKA-LEDGER",
+            "VEH-CONVOY-DIPLO-01",
+            "VEH-MOTO-WEWA-01",
+            "SYS-STEALTH",
+            "SYS-CMB-MELEE",
+            "SYS-WLD-REPUTATION",
+            "SYS-LAW-ESCALATION",
+            "SYS-TRAFFIC-ZONE",
+            "SYS-CROWD-MASS"
+          ],
+          "constraints": {
+            "target_frametime_ms": 16.6,
+            "target_quality_frametime_ms": 33.3,
+            "max_npc_active": 24,
+            "local_mass_crowd_target": 200,
+            "min_corridor_width_cm": 350,
+            "min_melee_zone_width_cm": 500,
+            "languages": ["fr-CD", "ln-CD"],
+            "entity_status_ceiling": "PROPOSED"
+          },
+          "required_output_template": "mission-design-template.md",
+          "output_artifact": "production/phase-6-new-scenario/03-gd02-msn-main-009-kinsuka-convoy.md",
+          "upstream_artifacts": [
+            "production/phase-6-new-scenario/00-dir01-execution-plan.json",
+            "production/phase-6-new-scenario/01-wld02-kinsuka-cultural-brief.md",
+            "production/phase-6-new-scenario/02-wld03-kinsuka-urban-architecture-spec.md"
+          ]
+        }
+      ]
+    },
+    {
+      "wave_index": 4,
+      "stratum": 2,
+      "parallel_tasks": [
+        {
+          "task_id": "TSK-P6-004",
+          "target_skill": "NAR-04",
+          "objective": "Rédiger les dialogues interactifs ramifiés et barks systémiques bilingues (fr-CD / ln-CD) de MSN-MAIN-009-KINSUKA-CONVOY impliquant CHR-PROTAG-KOFFI, CHR-ALLY-MAMA-LUZOLO, les agents ORG-POLICE-PCR, l'escorte ORG-CARTEL-FLEUVE et les artisans de ORG-SYNDICAT-CARRIERES-KINSUKA, avec clés de localisation structurées et respect des balises RESEARCH_REQUIRED issues de WLD-02.",
+          "context_entities": [
+            "DST-NGALIEMA",
+            "LOC-NGALIEMA-KINSUKA-CROSSING",
+            "MSN-MAIN-009-KINSUKA-CONVOY",
+            "CHR-PROTAG-KOFFI",
+            "CHR-ALLY-MAMA-LUZOLO",
+            "CHR-ANTAG-MUKENDI",
+            "ORG-CARTEL-FLEUVE",
+            "ORG-SYNDICAT-CARRIERES-KINSUKA",
+            "ORG-POLICE-PCR",
+            "ITM-DOC-KINSUKA-LEDGER",
+            "SYS-WLD-REPUTATION"
+          ],
+          "constraints": {
+            "target_frametime_ms": 16.6,
+            "target_quality_frametime_ms": 33.3,
+            "max_npc_active": 24,
+            "languages": ["fr-CD", "ln-CD"],
+            "entity_status_ceiling": "PROPOSED"
+          },
+          "required_output_template": "dialogue-barks-template.md",
+          "output_artifact": "production/phase-6-new-scenario/04-nar04-kinsuka-dialogue-barks.md",
+          "upstream_artifacts": [
+            "production/phase-6-new-scenario/00-dir01-execution-plan.json",
+            "production/phase-6-new-scenario/01-wld02-kinsuka-cultural-brief.md",
+            "production/phase-6-new-scenario/03-gd02-msn-main-009-kinsuka-convoy.md"
+          ]
+        },
+        {
+          "task_id": "TSK-P6-005",
+          "target_skill": "WLD-05",
+          "objective": "Produire la spécification de Level Design & Blockout métrique UE 5.8 de LOC-NGALIEMA-KINSUKA-CROSSING pour MSN-MAIN-009-KINSUKA-CONVOY : découpage spatial multi-niveaux (terrasses de carrières, chaussée en pente congestionnée, passerelle marché, poste PCR, surplomb des rapides), lignes de mire SYS-WLD-LANDMARKS, couverts (100 cm / 200 cm), circulations (>= 350 cm, mêlée >= 500 cm) et volumes de streaming.",
+          "context_entities": [
+            "DST-NGALIEMA",
+            "LOC-NGALIEMA-KINSUKA-CROSSING",
+            "MSN-MAIN-009-KINSUKA-CONVOY",
+            "CHR-PROTAG-KOFFI",
+            "CHR-ALLY-MAMA-LUZOLO",
+            "ORG-POLICE-PCR",
+            "ORG-CARTEL-FLEUVE",
+            "VEH-CONVOY-DIPLO-01",
+            "VEH-MOTO-WEWA-01",
+            "VEH-BUS-TRANSCO-01",
+            "SYS-WLD-STREAMING",
+            "SYS-WLD-LANDMARKS",
+            "SYS-STEALTH",
+            "SYS-CMB-MELEE"
+          ],
+          "constraints": {
+            "target_frametime_ms": 16.6,
+            "target_quality_frametime_ms": 33.3,
+            "max_npc_active": 24,
+            "min_corridor_width_cm": 350,
+            "min_melee_zone_width_cm": 500,
+            "player_capsule_cm": "180x42",
+            "low_cover_cm": 100,
+            "high_cover_cm": 200,
+            "ledge_grab_range_cm": "260-300",
+            "min_ceiling_cm": 320,
+            "languages": ["fr-CD", "ln-CD"],
+            "entity_status_ceiling": "PROPOSED"
+          },
+          "required_output_template": "level-design-blockout-template.md",
+          "output_artifact": "production/phase-6-new-scenario/05-wld05-kinsuka-crossing-blockout.md",
+          "upstream_artifacts": [
+            "production/phase-6-new-scenario/00-dir01-execution-plan.json",
+            "production/phase-6-new-scenario/02-wld03-kinsuka-urban-architecture-spec.md",
+            "production/phase-6-new-scenario/03-gd02-msn-main-009-kinsuka-convoy.md"
+          ]
+        }
+      ]
+    },
+    {
+      "wave_index": 5,
+      "stratum": 3,
+      "parallel_tasks": [
+        {
+          "task_id": "TSK-P6-006",
+          "target_skill": "AI-04",
+          "objective": "Spécifier les routines systémiques journalières (carriers de ORG-SYNDICAT-CARRIERES-KINSUKA, vendeurs de la passerelle, pendulaires) et la matrice d'escalade policière SYS-LAW-ESCALATION de ORG-POLICE-PCR (Niveaux 1 à 3 : sifflet/contrôle, barrage carrefour Kinsuka, poursuite VEH-POLICE-PICKUP-01 + secours ORG-URGENCE-FLUVIALE) face à un incident impliquant VEH-CONVOY-DIPLO-01.",
+          "context_entities": [
+            "DST-NGALIEMA",
+            "LOC-NGALIEMA-KINSUKA-CROSSING",
+            "MSN-MAIN-009-KINSUKA-CONVOY",
+            "CHR-PROTAG-KOFFI",
+            "CHR-ALLY-MAMA-LUZOLO",
+            "ORG-POLICE-PCR",
+            "ORG-URGENCE-FLUVIALE",
+            "ORG-CARTEL-FLEUVE",
+            "ORG-SYNDICAT-CARRIERES-KINSUKA",
+            "VEH-POLICE-PICKUP-01",
+            "VEH-CONVOY-DIPLO-01",
+            "SYS-LAW-ESCALATION",
+            "SYS-WLD-REPUTATION",
+            "SYS-CROWD-MASS"
+          ],
+          "constraints": {
+            "target_frametime_ms": 16.6,
+            "target_quality_frametime_ms": 33.3,
+            "max_npc_active": 24,
+            "local_mass_crowd_target": 200,
+            "mass_hydration_radius_m": 25,
+            "cpu_npcai_budget_ms": 2.5,
+            "cpu_mass_budget_ms": 2.0,
+            "languages": ["fr-CD", "ln-CD"],
+            "entity_status_ceiling": "PROPOSED"
+          },
+          "required_output_template": "world-life-law-escalation-template.md",
+          "output_artifact": "production/phase-6-new-scenario/06-ai04-kinsuka-schedules-pcr-escalation.md",
+          "upstream_artifacts": [
+            "production/phase-6-new-scenario/00-dir01-execution-plan.json",
+            "production/phase-6-new-scenario/01-wld02-kinsuka-cultural-brief.md",
+            "production/phase-6-new-scenario/03-gd02-msn-main-009-kinsuka-convoy.md",
+            "production/phase-6-new-scenario/04-nar04-kinsuka-dialogue-barks.md",
+            "production/phase-6-new-scenario/05-wld05-kinsuka-crossing-blockout.md"
+          ]
+        },
+        {
+          "task_id": "TSK-P6-007",
+          "target_skill": "AUD-04",
+          "objective": "Spécifier le pipeline voix, doublage bilingue (fr-CD / ln-CD), sous-titrage dynamique code-switching et intégration Wwise (plafond 64 voix physiques, 512 MB RAM, -23 LUFS, atténuation face au masquage des rapides de Kinsuka RR-KINSUKA-ACOUSTIC-004, mode STREAMER_SAFE) pour MSN-MAIN-009-KINSUKA-CONVOY.",
+          "context_entities": [
+            "DST-NGALIEMA",
+            "LOC-NGALIEMA-KINSUKA-CROSSING",
+            "MSN-MAIN-009-KINSUKA-CONVOY",
+            "CHR-PROTAG-KOFFI",
+            "CHR-ALLY-MAMA-LUZOLO",
+            "ORG-POLICE-PCR",
+            "ORG-CARTEL-FLEUVE",
+            "ORG-SYNDICAT-CARRIERES-KINSUKA"
+          ],
+          "constraints": {
+            "target_frametime_ms": 16.6,
+            "target_quality_frametime_ms": 33.3,
+            "audio_ram_budget_mb": 512,
+            "max_wwise_physical_voices": 64,
+            "loudness_target_lufs": -23,
+            "streamer_safe_required": true,
+            "languages": ["fr-CD", "ln-CD"],
+            "entity_status_ceiling": "PROPOSED"
+          },
+          "required_output_template": "vo-localisation-wwise-template.md",
+          "output_artifact": "production/phase-6-new-scenario/07-aud04-kinsuka-vo-localisation-wwise.md",
+          "upstream_artifacts": [
+            "production/phase-6-new-scenario/00-dir01-execution-plan.json",
+            "production/phase-6-new-scenario/01-wld02-kinsuka-cultural-brief.md",
+            "production/phase-6-new-scenario/04-nar04-kinsuka-dialogue-barks.md"
+          ]
+        },
+        {
+          "task_id": "TSK-P6-008",
+          "target_skill": "ENG-04",
+          "objective": "Concevoir le pipeline procédural SideFX Houdini 22.0 (PDG TOPs, masques DEM/latérite Copernicus, terrasses de carrières, ouvrages de soutènement et génération/export des splines ZoneGraph vers UE 5.8 World Partition 12800 cm / OFPA) pour LOC-NGALIEMA-KINSUKA-CROSSING, en balisant toute exécution hython/HDA comme NOT TESTED et les données DEM/OSM manquantes comme RESEARCH_REQUIRED.",
+          "context_entities": [
+            "DST-NGALIEMA",
+            "LOC-NGALIEMA-KINSUKA-CROSSING",
+            "SYS-WLD-STREAMING",
+            "SYS-TRAFFIC-ZONE",
+            "VEH-MOTO-WEWA-01",
+            "VEH-TAXI-JAUNE-01",
+            "VEH-BUS-TRANSCO-01"
+          ],
+          "constraints": {
+            "target_frametime_ms": 16.6,
+            "target_quality_frametime_ms": 33.3,
+            "world_partition_cell_cm": 12800,
+            "standard_lane_width_cm": 350,
+            "heavy_lane_width_cm": 400,
+            "wewa_filtering_width_cm": 130,
+            "min_sidewalk_width_cm": 250,
+            "binary_execution_status": "NOT TESTED",
+            "languages": ["fr-CD", "ln-CD"],
+            "entity_status_ceiling": "PROPOSED"
+          },
+          "required_output_template": "houdini-procedural-pipeline-template.md",
+          "output_artifact": "production/phase-6-new-scenario/08-eng04-kinsuka-houdini-zonegraph-pipeline.md",
+          "upstream_artifacts": [
+            "production/phase-6-new-scenario/00-dir01-execution-plan.json",
+            "production/phase-6-new-scenario/02-wld03-kinsuka-urban-architecture-spec.md",
+            "production/phase-6-new-scenario/05-wld05-kinsuka-crossing-blockout.md"
+          ]
+        }
+      ]
+    },
+    {
+      "wave_index": 6,
+      "stratum": 3,
+      "parallel_tasks": [
+        {
+          "task_id": "TSK-P6-009",
+          "target_skill": "AI-03",
+          "objective": "Spécifier le graphe et la simulation de trafic SYS-TRAFFIC-ZONE (ZoneGraph / MassTraffic) sur les pentes de LOC-NGALIEMA-KINSUKA-CROSSING : immobilisation et reprise du convoi VEH-CONVOY-DIPLO-01 derrière VEH-BUS-TRANSCO-01 et VEH-TAXI-JAUNE-01, slalom inter-file (>= 130 cm) des VEH-MOTO-WEWA-01, dégagement d'urgence de VEH-POLICE-PICKUP-01 et prévention des deadlocks en côte sous budget Mass <= 2.0 ms.",
+          "context_entities": [
+            "DST-NGALIEMA",
+            "LOC-NGALIEMA-KINSUKA-CROSSING",
+            "MSN-MAIN-009-KINSUKA-CONVOY",
+            "ORG-CARTEL-FLEUVE",
+            "ORG-TRANSCO",
+            "ORG-POLICE-PCR",
+            "VEH-CONVOY-DIPLO-01",
+            "VEH-MOTO-WEWA-01",
+            "VEH-TAXI-JAUNE-01",
+            "VEH-BUS-TRANSCO-01",
+            "VEH-POLICE-PICKUP-01",
+            "SYS-TRAFFIC-ZONE",
+            "SYS-CROWD-MASS",
+            "SYS-PHYS-CHAOS",
+            "SYS-LAW-ESCALATION"
+          ],
+          "constraints": {
+            "target_frametime_ms": 16.6,
+            "target_quality_frametime_ms": 33.3,
+            "cpu_mass_budget_ms": 2.0,
+            "cpu_chaos_budget_ms": 1.5,
+            "standard_lane_width_cm": 350,
+            "heavy_lane_width_cm": 400,
+            "wewa_filtering_width_cm": 130,
+            "binary_execution_status": "NOT TESTED",
+            "languages": ["fr-CD", "ln-CD"],
+            "entity_status_ceiling": "PROPOSED"
+          },
+          "required_output_template": "traffic-zonegraph-spec-template.md",
+          "output_artifact": "production/phase-6-new-scenario/09-ai03-kinsuka-traffic-zonegraph-spec.md",
+          "upstream_artifacts": [
+            "production/phase-6-new-scenario/00-dir01-execution-plan.json",
+            "production/phase-6-new-scenario/02-wld03-kinsuka-urban-architecture-spec.md",
+            "production/phase-6-new-scenario/03-gd02-msn-main-009-kinsuka-convoy.md",
+            "production/phase-6-new-scenario/05-wld05-kinsuka-crossing-blockout.md",
+            "production/phase-6-new-scenario/06-ai04-kinsuka-schedules-pcr-escalation.md",
+            "production/phase-6-new-scenario/08-eng04-kinsuka-houdini-zonegraph-pipeline.md"
+          ]
+        }
+      ]
+    },
+    {
+      "wave_index": 7,
+      "stratum": 4,
+      "parallel_tasks": [
+        {
+          "task_id": "TSK-P6-010",
+          "target_skill": "ENG-07",
+          "objective": "Auditer et consolider l'allocation budgétaire de performance UE 5.8 (60 FPS 16.6 ms / 30 FPS 33.3 ms, CPU Game 6.5 ms, NPC AI 2.5 ms pour <= 24 PNJ, Mass Crowd/Traffic 2.0 ms, Chaos 1.5 ms, Lumen 4.5 ms avec réflexions rapides Kinsuka, Nanite 2.5 ms, Niagara embruns/poussière latérite 1.5 ms, VRAM 6144 MB, Audio 512 MB / 64 voix) sur LOC-NGALIEMA-KINSUKA-CROSSING et MSN-MAIN-009-KINSUKA-CONVOY, en étiquetant toutes les métriques comme SYNTHETIC_TARGET_ALLOCATION / NOT TESTED.",
+          "context_entities": [
+            "DST-NGALIEMA",
+            "LOC-NGALIEMA-KINSUKA-CROSSING",
+            "MSN-MAIN-009-KINSUKA-CONVOY",
+            "SYS-WLD-STREAMING",
+            "SYS-CROWD-MASS",
+            "SYS-TRAFFIC-ZONE",
+            "SYS-PHYS-CHAOS",
+            "SYS-LAW-ESCALATION",
+            "SYS-TELEMETRY-ANALYTICS"
+          ],
+          "constraints": {
+            "target_frametime_ms": 16.6,
+            "target_quality_frametime_ms": 33.3,
+            "cpu_game_ms": 6.5,
+            "cpu_npcai_ms": 2.5,
+            "cpu_mass_ms": 2.0,
+            "cpu_chaos_ms": 1.5,
+            "cpu_anim_ms": 1.8,
+            "gpu_lumen_ms": 4.5,
+            "gpu_nanite_ms": 2.5,
+            "gpu_niagara_ms": 1.5,
+            "vram_perf_mb": 6144,
+            "vram_quality_mb": 8192,
+            "audio_ram_mb": 512,
+            "max_npc_active": 24,
+            "binary_execution_status": "NOT TESTED",
+            "performance_figures_classification": "SYNTHETIC_TARGET_ALLOCATION",
+            "languages": ["fr-CD", "ln-CD"],
+            "entity_status_ceiling": "PROPOSED"
+          },
+          "required_output_template": "performance-audit-template.md",
+          "output_artifact": "production/phase-6-new-scenario/10-eng07-kinsuka-performance-budget-audit.md",
+          "upstream_artifacts": [
+            "production/phase-6-new-scenario/00-dir01-execution-plan.json",
+            "production/phase-6-new-scenario/05-wld05-kinsuka-crossing-blockout.md",
+            "production/phase-6-new-scenario/06-ai04-kinsuka-schedules-pcr-escalation.md",
+            "production/phase-6-new-scenario/07-aud04-kinsuka-vo-localisation-wwise.md",
+            "production/phase-6-new-scenario/08-eng04-kinsuka-houdini-zonegraph-pipeline.md",
+            "production/phase-6-new-scenario/09-ai03-kinsuka-traffic-zonegraph-spec.md"
+          ]
+        }
+      ]
+    },
+    {
+      "wave_index": 8,
+      "stratum": 5,
+      "parallel_tasks": [
+        {
+          "task_id": "TSK-P6-011",
+          "target_skill": "NAR-06",
+          "objective": "Exécuter l'audit de continuité narrative, d'intégrité référentielle lore et de cohérence bilingue (fr-CD / ln-CD) sur les livrables narratifs, culturels, mission, routines IA et localisation audio de MSN-MAIN-009-KINSUKA-CONVOY (DST-NGALIEMA), en vérifiant l'absence d'entités fantômes non normalisées et le maintien du statut PROPOSED.",
+          "context_entities": [
+            "DST-NGALIEMA",
+            "LOC-NGALIEMA-KINSUKA-CROSSING",
+            "MSN-MAIN-009-KINSUKA-CONVOY",
+            "CHR-PROTAG-KOFFI",
+            "CHR-ALLY-MAMA-LUZOLO",
+            "CHR-ANTAG-MUKENDI",
+            "ORG-CARTEL-FLEUVE",
+            "ORG-SYNDICAT-CARRIERES-KINSUKA",
+            "ORG-POLICE-PCR",
+            "ITM-DOC-KINSUKA-LEDGER",
+            "SYS-WLD-REPUTATION"
+          ],
+          "constraints": {
+            "target_frametime_ms": 16.6,
+            "target_quality_frametime_ms": 33.3,
+            "max_npc_active": 24,
+            "languages": ["fr-CD", "ln-CD"],
+            "entity_status_ceiling": "PROPOSED"
+          },
+          "required_output_template": "narrative-continuity-audit-template.md",
+          "output_artifact": "production/phase-6-new-scenario/11-nar06-kinsuka-narrative-continuity-audit.md",
+          "upstream_artifacts": [
+            "production/phase-6-new-scenario/00-dir01-execution-plan.json",
+            "production/phase-6-new-scenario/01-wld02-kinsuka-cultural-brief.md",
+            "production/phase-6-new-scenario/03-gd02-msn-main-009-kinsuka-convoy.md",
+            "production/phase-6-new-scenario/04-nar04-kinsuka-dialogue-barks.md",
+            "production/phase-6-new-scenario/06-ai04-kinsuka-schedules-pcr-escalation.md",
+            "production/phase-6-new-scenario/07-aud04-kinsuka-vo-localisation-wwise.md"
+          ]
+        },
+        {
+          "task_id": "TSK-P6-012",
+          "target_skill": "DIR-07",
+          "objective": "Réaliser la revue globale d'assurance qualité et de conformité DoD inter-départements (Vagues 1 à 7 : WLD-02, WLD-03, GD-02, NAR-04, WLD-05, AI-04, AUD-04, ENG-04, AI-03, ENG-07), vérifier le respect des Scope Guards, des métriques spatiales, des budgets synthétiques UE 5.8 (NOT TESTED) et statuer sur l'éligibilité des 6 nouvelles entités PROPOSED en vue d'une co-signature ultérieure avec DIR-06.",
+          "context_entities": [
+            "DST-NGALIEMA",
+            "LOC-NGALIEMA-KINSUKA-CROSSING",
+            "MSN-MAIN-009-KINSUKA-CONVOY",
+            "CHR-PROTAG-KOFFI",
+            "CHR-ALLY-MAMA-LUZOLO",
+            "ORG-CARTEL-FLEUVE",
+            "ORG-SYNDICAT-CARRIERES-KINSUKA",
+            "ORG-POLICE-PCR",
+            "ITM-DOC-KINSUKA-LEDGER",
+            "VEH-CONVOY-DIPLO-01",
+            "SYS-WLD-STREAMING",
+            "SYS-CROWD-MASS",
+            "SYS-TRAFFIC-ZONE",
+            "SYS-LAW-ESCALATION",
+            "SYS-TELEMETRY-ANALYTICS"
+          ],
+          "constraints": {
+            "target_frametime_ms": 16.6,
+            "target_quality_frametime_ms": 33.3,
+            "max_npc_active": 24,
+            "min_corridor_width_cm": 350,
+            "binary_execution_status": "NOT TESTED",
+            "performance_figures_classification": "SYNTHETIC_TARGET_ALLOCATION",
+            "languages": ["fr-CD", "ln-CD"],
+            "entity_status_ceiling": "PROPOSED",
+            "requires_dir06_cosignature_for_confirmed": true
+          },
+          "required_output_template": "quality-gate-audit-template.md",
+          "output_artifact": "production/phase-6-new-scenario/12-dir07-kinsuka-quality-gate-signoff.md",
+          "upstream_artifacts": [
+            "production/phase-6-new-scenario/00-dir01-raw-dag.json",
+            "production/phase-6-new-scenario/00-dir01-execution-plan.json",
+            "production/phase-6-new-scenario/00-dir01-orchestration-brief.md",
+            "production/phase-6-new-scenario/01-wld02-kinsuka-cultural-brief.md",
+            "production/phase-6-new-scenario/02-wld03-kinsuka-urban-architecture-spec.md",
+            "production/phase-6-new-scenario/03-gd02-msn-main-009-kinsuka-convoy.md",
+            "production/phase-6-new-scenario/04-nar04-kinsuka-dialogue-barks.md",
+            "production/phase-6-new-scenario/05-wld05-kinsuka-crossing-blockout.md",
+            "production/phase-6-new-scenario/06-ai04-kinsuka-schedules-pcr-escalation.md",
+            "production/phase-6-new-scenario/07-aud04-kinsuka-vo-localisation-wwise.md",
+            "production/phase-6-new-scenario/08-eng04-kinsuka-houdini-zonegraph-pipeline.md",
+            "production/phase-6-new-scenario/09-ai03-kinsuka-traffic-zonegraph-spec.md",
+            "production/phase-6-new-scenario/10-eng07-kinsuka-performance-budget-audit.md"
+          ]
+        }
+      ]
+    }
+  ],
+  "arbitration_notes": [
+    {
+      "arbitration_id": "ARB-P6-001",
+      "topic": "Calibration locale de densité Foule/PNJ à Kinsuka vs moyenne communale DST-NGALIEMA",
+      "decision": "kinshasa-districts.md fixe la densité moyenne de DST-NGALIEMA à Faible à Moyenne (~200 PNJ). Pour représenter un carrefour et marché en surplomb animé à LOC-NGALIEMA-KINSUKA-CROSSING sans violer Couche 2 ni les budgets CPU, l'allocation locale est fixée à <= 24 PNJ individuels AI-01 (gardes convoi ORG-CARTEL-FLEUVE, officiers ORG-POLICE-PCR, Mama Luzolo) sous 2.5 ms CPU et 180 à 220 entités Mass Crowd (SYS-CROWD-MASS, hydratation <= 25 m) sous 2.0 ms CPU."
+    },
+    {
+      "arbitration_id": "ARB-P6-002",
+      "topic": "Lacune Couche 2 : Absence de signature sensorielle Section 2 pour DST-NGALIEMA dans kinshasa-districts.md",
+      "decision": "Contrairement à DST-GOMBE, DST-MATONGE et DST-LIMETE, DST-NGALIEMA figure uniquement au tableau synthétique de la Section 1 de kinshasa-districts.md. WLD-02, WLD-03 et AUD-04 doivent proposer les paramètres sensoriels (latérite humide, embruns et grondement des rapides de Kinsuka, martelage des carrières) au statut PROPOSED / RESEARCH_REQUIRED sans copier les presets de Matonge ou Gombe."
+    },
+    {
+      "arbitration_id": "ARB-P6-003",
+      "topic": "Lacune Couche 2 : SYS-WLD-REPUTATION ne liste pas encore DST-NGALIEMA dans ses dépendances",
+      "decision": "Dans entities-registry.csv, SYS-WLD-REPUTATION dépend de DST-GOMBE|DST-MATONGE|DST-KALAMU. Toute mécanique de solidarité syndicale ou de tolérance PCR spécifique à DST-NGALIEMA conçue par GD-02, NAR-04 et AI-04 doit être étiquetée comme extension PROPOSED pour indexation ultérieure par PRD-03 / DIR-06."
+    },
+    {
+      "arbitration_id": "ARB-P6-004",
+      "topic": "Maintien strict du plafond de statut PROPOSED (absence de DIR-06 dans la tranche de 13 skills)",
+      "decision": "Conformément au Scope Guard de DIR-01, aucune nouvelle entité (LOC-NGALIEMA-KINSUKA-CROSSING, MSN-MAIN-009-KINSUKA-CONVOY, CHR-ALLY-MAMA-LUZOLO, ITM-DOC-KINSUKA-LEDGER, VEH-CONVOY-DIPLO-01, ORG-SYNDICAT-CARRIERES-KINSUKA) ne peut passer à CONFIRMED sans la signature conjointe de DIR-06 et DIR-07. DIR-07 et NAR-06 en Vague 8 valident l'aptitude technique et narrative (GATE_READY), mais le statut canonique final demeure PROPOSED."
+    },
+    {
+      "arbitration_id": "ARB-P6-005",
+      "topic": "Gestion des skills intermédiaires omis par économie d'agents (WLD-04, NAR-02, NAR-03, GD-06, ART-02)",
+      "decision": "Les 12 spécialistes aval s'appuient directement sur les standards géométriques immuables de spatial-metrics.md et les livrables amont présents dans la tranche (WLD-02, WLD-03, GD-02), sans jamais sortir de leur Scope Guard respectif (aucun code C++ UE5, aucun tuning Chaos Vehicle GD-06 inventé, aucun shader HLSL)."
+    }
+  ],
+  "final_status": "PROPOSED"
+}

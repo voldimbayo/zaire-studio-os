@@ -1,0 +1,10 @@
+{
+  "feature_id": "MSN-MAIN-001-ARRIVEE-UI-AND-CONTROLS",
+  "text_contrast_ratio": 7.4,
+  "subtitle_background_opacity": 0.8,
+  "subtitle_has_speaker_prefix": true,
+  "supports_lingala_open_vowels": true,
+  "uses_color_as_only_indicator": false,
+  "has_qte_hold_or_auto_alternative": true,
+  "ui_text_expansion_tolerance_pct": 38.0
+}

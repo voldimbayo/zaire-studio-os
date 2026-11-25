@@ -1,0 +1,4 @@
+preset_id,district_id,time_of_day,weather_tag,sun_illuminance_lux,color_temp_kelvin,target_ev100,max_overlapping_vsm_lights,lumen_gpu_budget_ms,status
+LGT_GOMBE_DAWN_FOG,DST-GOMBE,06:15,CLEAR_FOG,18000,3800,11.8,2,4.2,CONFIRMED
+LGT_KIN_NOON_EQUATOR,GLOBAL,12:30,CLEAR_SUN,110000,5600,15.0,1,4.0,CONFIRMED
+LGT_MATONGE_NIGHT_NEON,DST-MATONGE,21:30,TROPICAL_RAIN,1,2700,3.5,3,4.5,CONFIRMED

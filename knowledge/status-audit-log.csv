@@ -1,0 +1,13 @@
+timestamp,entity_id,previous_status,new_status,actor_skill,approver_skill,rationale
+2026-11-25T10:00:00Z,DST-GOMBE,PROPOSED,CONFIRMED,WLD-01,DIR-03|DIR-06,Validation initiale du référentiel urbain de la Gombe via données OSM et World Bible.
+2026-11-25T10:05:00Z,DST-MATONGE,PROPOSED,CONFIRMED,WLD-01,DIR-03|DIR-06,Validation du pôle culturel de Matonge et du Rond-Point Victoire.
+2026-11-25T10:10:00Z,DST-LIMETE,PROPOSED,CONFIRMED,WLD-01,DIR-03|DIR-06,Validation de la commune de Limete et du landmark de l'Échangeur.
+2026-11-25T10:15:00Z,DST-MASINA,PROPOSED,RESEARCH_REQUIRED,WLD-03,DIR-06,Couverture SIG/OSM des ruelles secondaires de Masina incomplète (cf. research/research-gaps.md).
+2026-11-25T10:20:00Z,CHR-PROTAG-KOFFI,PROPOSED,CONFIRMED,NAR-03,DIR-03|DIR-06,Approbation de la fiche biographique et psychologique du protagoniste Koffi Kabongo.
+2026-11-25T10:25:00Z,MSN-MAIN-001-ARRIVEE,PROPOSED,CONFIRMED,GD-02,DIR-03|DIR-05|DIR-06,Validation du design de la mission d'introduction au Port ONATRA.
+2026-11-25T10:30:00Z,MSN-SIDE-014-WEWA,RESEARCH_REQUIRED,PROPOSED,GD-02,DIR-05,Soumission de la mission secondaire de course en moto Wewa en attente d'audit QA et continuité.
+2026-11-26T00:08:00Z,DST-BANDAL,PROPOSED,CONFIRMED,WLD-01,DIR-03|DIR-05|DIR-06,Validation du quartier Bandalungwa-Sud (Scénario 1 Phase 5) avec urbanisme, économie et circulation.
+2026-11-26T00:08:05Z,LOC-BANDAL-LUMUMBA-HUB,PROPOSED,CONFIRMED,WLD-04,DIR-03|DIR-05|DIR-06,Validation du carrefour central et marché de Bandal-Sud.
+2026-11-26T00:08:10Z,ORG-POLICE-PCR,PROPOSED,CONFIRMED,NAR-05,DIR-03|DIR-05|DIR-06,Ajout de la Police de Circulation Routière (PCR) pour la régulation et l'escalade routière (Scénario 4).
+2026-11-26T00:08:15Z,SYS-LAW-ESCALATION,PROPOSED,CONFIRMED,AI-04,DIR-04|DIR-05|DIR-06,Ajout du système d'intervention policière graduée et de barrages routiers (Workstream 4).
+2026-11-26T00:08:20Z,SYS-TELEMETRY-ANALYTICS,PROPOSED,CONFIRMED,PRD-05,DIR-04|DIR-05|DIR-07,Restauration du système de télémétrie playtest et heatmaps spatiales (< 0.1 ms CPU).

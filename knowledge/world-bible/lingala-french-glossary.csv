@@ -1,0 +1,13 @@
+term_id,lingala_unicode,phonetic_hint,french_meaning,english_meaning,register,context_usage,status
+LEX-001,Mbote,m-BO-te,Bonjour / Salut,Hello / Greetings,Courant,Salutation quotidienne entre citoyens dans tous les quartiers de Kinshasa.,CONFIRMED
+LEX-002,Sango nini?,sa-NGO NI-ni,Quelles sont les nouvelles ? / Comment ça va ?,What's the news? / How are you?,Courant,Ouverture de dialogue amical ou prise de contact avec un informateur.,CONFIRMED
+LEX-003,Malamu,ma-LA-mu,Bien / Ça va bien,Good / Fine,Courant,Réponse standard à Sango nini.,CONFIRMED
+LEX-004,Wewa,WE-wa,Moto-taxi / Conducteur de moto-taxi,Motorcycle taxi / Rider,Urbain Kinois,Désigne les motos-taxis (VEH-MOTO-WEWA-01) omniprésentes dans le trafic de Kinshasa.,CONFIRMED
+LEX-005,Ebale,e-BA-le,Le fleuve (Fleuve Congo),The river (Congo River),Courant,Désigne le fleuve Congo bordant Gombe et Ngaliema.,CONFIRMED
+LEX-006,Libongo,li-BO-ngo,Le port / Le quai / La rive,Harbor / Dock / Riverbank,Courant / Portuaire,Utilisé autour de LOC-GOMBE-PORT et des débarcadères fluviaux.,CONFIRMED
+LEX-007,Kɛbá!,KE-ba,Attention ! / Fais gaffe !,Watch out! / Careful!,Urgence / Combat,Bark d'alerte PNJ lors d'une esquive véhicule ou d'un danger imminent (contient glyphe Unicode ɛ).,CONFIRMED
+LEX-008,Tɔ́kɛndɛ́,to-KEN-de,Allons-y ! / En route !,Let's go! / Move out!,Action / Mission,Bark de départ en mission avec un allié ou un chauffeur Wewa (contient glyphes Unicode ɔ et ɛ).,CONFIRMED
+LEX-009,Ndako,n-DA-ko,Maison / Planque / Foyer,House / Safehouse / Home,Courant,Désigne les bases et lieux de repli de Koffi à Kalamu.,CONFIRMED
+LEX-010,Mosolo,mo-SO-lo,Argent / Fonds / Paiement,Money / Cash / Payment,Courant / Économie,Utilisé dans les transactions économiques (GD-03) et négociations de contrats.,CONFIRMED
+LEX-011,Nganda,n-GA-nda,Bar-terrasse / Lieu de détente musical,Open-air bar / Music lounge,Urbain / Culturel,Lieux de sociabilité et de collecte de rumeurs à Matonge (DST-MATONGE).,CONFIRMED
+LEX-012,Bilɔkɔ,bi-LO-ko,Objets / Marchandises / Cargaison,Goods / Items / Cargo,Courant / Logistique,Désigne le butin ou les caisses de contrebande portuaire (contient glyphe Unicode ɔ).,CONFIRMED

@@ -1,0 +1,14 @@
+{
+  "profile_nature": "SYNTHETIC_TARGET_ALLOCATION_NOT_MEASURED_IN_ENGINE",
+  "district_id": "DST-BANDAL_AND_MATONGE_TRAFFIC",
+  "total_frame_p99_ms": 15.7,
+  "cpu_game_thread_ms": 5.85,
+  "cpu_npc_ai_ms": 2.05,
+  "cpu_mass_crowd_traffic_ms": 1.82,
+  "cpu_chaos_physics_ms": 1.3,
+  "cpu_animation_ms": 1.5,
+  "gpu_lumen_ms": 4.2,
+  "gpu_nanite_ms": 2.15,
+  "gpu_niagara_vfx_ms": 1.1,
+  "vram_used_mb": 5590.0
+}

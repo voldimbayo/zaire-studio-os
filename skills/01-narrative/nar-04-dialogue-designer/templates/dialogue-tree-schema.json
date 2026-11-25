@@ -1,0 +1,22 @@
+{
+  "dialogue_id": "DLG-MSN-XXX-SLUG",
+  "mission_id": "MSN-MAIN-001-ARRIVEE",
+  "location_id": "LOC-GOMBE-PORT",
+  "interrupt_handlers": {
+    "on_combat_triggered": "BARK_INTERRUPT_COMBAT",
+    "on_player_walk_away": "BARK_INTERRUPT_DISTANCE",
+    "on_resume_conversation": "N01"
+  },
+  "nodes": [
+    {
+      "node_id": "N01",
+      "speaker_id": "CHR-PROTAG-KOFFI",
+      "line_text": "Mbote! Voici le laissez-passer ONATRA pour accéder au quai numéro quatre.",
+      "emotion_tag": "WARM",
+      "camera_framing": "OTS_LEFT",
+      "required_gameplay_tag": "State.Character.Stealth.Disguised",
+      "is_terminal": true,
+      "next_nodes": []
+    }
+  ]
+}

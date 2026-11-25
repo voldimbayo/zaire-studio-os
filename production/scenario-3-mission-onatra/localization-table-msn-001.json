@@ -1,0 +1,22 @@
+[
+  {
+    "loc_key": "SUB_MSN001_KOFFI_N01",
+    "speaker_id": "CHR-PROTAG-KOFFI",
+    "source_fr_cd": "[KOFFI] : Mbote vieux ! Voici le laissez-passer ONATRA pour le quai numéro quatre.",
+    "target_ln_cd": "[KOFFI] : Mbote kulutu! Talá mokanda ya ONATRA mpo na libongo ya minei.",
+    "target_text": "[KOFFI] : Mbote boss! Here is the signed ONATRA pass for dock number four.",
+    "ui_container_max_chars": 120,
+    "requires_lingala_open_vowels": false,
+    "is_subtitle": true
+  },
+  {
+    "loc_key": "SUB_MSN001_AMINA_N02",
+    "speaker_id": "CHR-ALLY-AMINA",
+    "source_fr_cd": "[AMINA] : Kɛbá Koffi, les hommes de Mukendi verrouillent la grue ! Prends les bilɔkɔ et tɔ́kɛndɛ́ !",
+    "target_ln_cd": "[AMINA] : Kɛbá Koffi, bato ya Mukendi bakangi grue! Kamatá bilɔkɔ mpe tɔ́kɛndɛ́!",
+    "target_text": "[AMINA] : Kɛbá Koffi, Mukendi's men are locking down the crane! Grab the bilɔkɔ and tɔ́kɛndɛ́!",
+    "ui_container_max_chars": 140,
+    "requires_lingala_open_vowels": true,
+    "is_subtitle": true
+  }
+]

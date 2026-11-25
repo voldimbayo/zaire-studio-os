@@ -1,0 +1,12 @@
+{
+  "system_id": "SYS-CROWD-MASS",
+  "target_district_id": "DST-MATONGE",
+  "mode": "perf_60fps",
+  "hydrated_actors_ai01": 18,
+  "mass_lod1_count": 180,
+  "mass_lod2_count": 420,
+  "hydration_radius_m": 25.0,
+  "lod1_radius_m": 80.0,
+  "lod2_vat_radius_m": 250.0,
+  "vram_modular_kit_budget_mb": 720
+}

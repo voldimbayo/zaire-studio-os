@@ -1,0 +1,771 @@
+{
+  "SCENARIO_1": {
+    "title": "Conception d'un quartier fictif inspiré de Kinshasa (DST-BANDAL : urbanisme, économie, bâtiments, circulation, activités, PNJ)",
+    "classification": "PASS",
+    "generated_files": [
+      "production\\scenario-1-district-bandal\\district-bandal-spec.md",
+      "production\\scenario-1-district-bandal\\district-bandal-spec.json",
+      "production\\scenario-1-district-bandal\\spatial-blockout-bandal.json",
+      "production\\scenario-1-district-bandal\\spatial-blockout-bandal.md",
+      "production\\scenario-1-district-bandal\\building-registry-bandal.csv",
+      "production\\scenario-1-district-bandal\\kit-bandal-3d-spec.json",
+      "production\\scenario-1-district-bandal\\economy-bandal-config.json"
+    ],
+    "eng04_wave_before_ai03_wave": "ENG-04 (Wave 10) -> AI-03 (Wave 11)",
+    "selected_skills": [
+      "DIR-01",
+      "DIR-03",
+      "DIR-04",
+      "DIR-05",
+      "WLD-02",
+      "WLD-03",
+      "WLD-01",
+      "GD-01",
+      "WLD-04",
+      "WLD-05",
+      "WLD-06",
+      "GD-03",
+      "GD-06",
+      "ART-01",
+      "ART-02",
+      "ART-03",
+      "ART-04",
+      "ENG-04",
+      "AI-02",
+      "AI-03",
+      "AI-04",
+      "ENG-07",
+      "DIR-06",
+      "DIR-07"
+    ],
+    "dag_waves": [
+      {
+        "wave_index": 1,
+        "parallel_skills": [
+          "DIR-01"
+        ]
+      },
+      {
+        "wave_index": 2,
+        "parallel_skills": [
+          "DIR-03",
+          "DIR-04"
+        ]
+      },
+      {
+        "wave_index": 3,
+        "parallel_skills": [
+          "DIR-05"
+        ]
+      },
+      {
+        "wave_index": 4,
+        "parallel_skills": [
+          "GD-01",
+          "WLD-02",
+          "WLD-03"
+        ]
+      },
+      {
+        "wave_index": 5,
+        "parallel_skills": [
+          "ART-01",
+          "WLD-01"
+        ]
+      },
+      {
+        "wave_index": 6,
+        "parallel_skills": [
+          "ART-04",
+          "WLD-04"
+        ]
+      },
+      {
+        "wave_index": 7,
+        "parallel_skills": [
+          "GD-03",
+          "GD-06",
+          "WLD-05"
+        ]
+      },
+      {
+        "wave_index": 8,
+        "parallel_skills": [
+          "WLD-06"
+        ]
+      },
+      {
+        "wave_index": 9,
+        "parallel_skills": [
+          "AI-04",
+          "ART-02",
+          "ART-03"
+        ]
+      },
+      {
+        "wave_index": 10,
+        "parallel_skills": [
+          "AI-02",
+          "ENG-04"
+        ]
+      },
+      {
+        "wave_index": 11,
+        "parallel_skills": [
+          "AI-03"
+        ]
+      },
+      {
+        "wave_index": 12,
+        "parallel_skills": [
+          "ENG-07"
+        ]
+      },
+      {
+        "wave_index": 13,
+        "parallel_skills": [
+          "DIR-06",
+          "DIR-07"
+        ]
+      }
+    ],
+    "metrics_validation": "[OK] Blockout BLK-BANDAL-HUB-01 conforme à 100% aux métriques spatiales UE5.",
+    "economy_validation": {
+      "simulated_hours": 40,
+      "average_sink_to_faucet_ratio": 0.842,
+      "final_net_balance": 392000,
+      "economy_healthy": true,
+      "checkpoints": [
+        {
+          "hour": 1,
+          "faucet": 14500,
+          "sink": 11650,
+          "sink_to_faucet_ratio": 0.803,
+          "net_balance": 7850
+        },
+        {
+          "hour": 20,
+          "faucet": 62000,
+          "sink": 52500,
+          "sink_to_faucet_ratio": 0.847,
+          "net_balance": 128500
+        },
+        {
+          "hour": 40,
+          "faucet": 112000,
+          "sink": 95500,
+          "sink_to_faucet_ratio": 0.853,
+          "net_balance": 392000
+        }
+      ]
+    },
+    "art_3d_validation": "[OK] Asset SM_Kit_Bandal_NgandaCorner_400a conforme aux standards 3D Nanite & Texel Density (10.24 px/cm).",
+    "verified_sources": [
+      "SRC-001",
+      "SRC-004",
+      "SRC-005",
+      "SRC-012",
+      "SRC-013",
+      "SRC-019",
+      "SRC-021",
+      "SRC-023"
+    ]
+  },
+  "SCENARIO_2": {
+    "title": "Création d'un protagoniste complet (CHR-PROTAG-KOFFI : biographie, personnalité, famille FAM-KABONGO, relations, motivations, évolution)",
+    "classification": "PASS",
+    "generated_files": [
+      "production\\scenario-2-protagonist-koffi\\protagonist-koffi-biography.md",
+      "production\\scenario-2-protagonist-koffi\\character-relationships-koffi.json"
+    ],
+    "selected_skills": [
+      "DIR-01",
+      "DIR-03",
+      "WLD-01",
+      "WLD-02",
+      "NAR-01",
+      "NAR-03",
+      "NAR-05",
+      "ART-01",
+      "ART-03",
+      "ART-04",
+      "ART-06",
+      "ART-05",
+      "GD-01",
+      "GD-04",
+      "GD-05",
+      "NAR-06",
+      "PRD-03",
+      "DIR-06",
+      "DIR-07"
+    ],
+    "dag_waves": [
+      {
+        "wave_index": 1,
+        "parallel_skills": [
+          "DIR-01"
+        ]
+      },
+      {
+        "wave_index": 2,
+        "parallel_skills": [
+          "DIR-03"
+        ]
+      },
+      {
+        "wave_index": 3,
+        "parallel_skills": [
+          "GD-01",
+          "WLD-02"
+        ]
+      },
+      {
+        "wave_index": 4,
+        "parallel_skills": [
+          "ART-01",
+          "WLD-01"
+        ]
+      },
+      {
+        "wave_index": 5,
+        "parallel_skills": [
+          "ART-04",
+          "NAR-01"
+        ]
+      },
+      {
+        "wave_index": 6,
+        "parallel_skills": [
+          "GD-05",
+          "NAR-03",
+          "NAR-05"
+        ]
+      },
+      {
+        "wave_index": 7,
+        "parallel_skills": [
+          "GD-04"
+        ]
+      },
+      {
+        "wave_index": 8,
+        "parallel_skills": [
+          "ART-03",
+          "ART-06"
+        ]
+      },
+      {
+        "wave_index": 9,
+        "parallel_skills": [
+          "ART-05"
+        ]
+      },
+      {
+        "wave_index": 10,
+        "parallel_skills": [
+          "DIR-07",
+          "NAR-06",
+          "PRD-03"
+        ]
+      },
+      {
+        "wave_index": 11,
+        "parallel_skills": [
+          "DIR-06"
+        ]
+      }
+    ],
+    "verified_relationships_count": 4,
+    "verified_sources": [
+      "SRC-002",
+      "SRC-009",
+      "SRC-015",
+      "SRC-019",
+      "SRC-021",
+      "SRC-022"
+    ]
+  },
+  "SCENARIO_3": {
+    "title": "Création d'une mission principale (MSN-MAIN-001-ARRIVEE : objectifs, personnages, dialogues JSON, étapes, conséquences, L10n, XAG)",
+    "classification": "PASS",
+    "generated_files": [
+      "production\\scenario-3-mission-onatra\\mission-msn-main-001-spec.md",
+      "production\\scenario-3-mission-onatra\\dialogue-tree-msn-001.json",
+      "production\\scenario-3-mission-onatra\\localization-table-msn-001.json",
+      "production\\scenario-3-mission-onatra\\localization-table-msn-001.csv",
+      "production\\scenario-3-mission-onatra\\xag-accessibility-msn-001.json"
+    ],
+    "selected_skills": [
+      "DIR-01",
+      "DIR-03",
+      "DIR-04",
+      "DIR-05",
+      "WLD-01",
+      "WLD-02",
+      "WLD-03",
+      "GD-01",
+      "WLD-04",
+      "NAR-01",
+      "NAR-03",
+      "GD-02",
+      "GD-05",
+      "GD-07",
+      "NAR-02",
+      "NAR-04",
+      "WLD-05",
+      "AI-01",
+      "AUD-01",
+      "AUD-03",
+      "AUD-04",
+      "ENG-01",
+      "ENG-02",
+      "NAR-06",
+      "PRD-04",
+      "PRD-06",
+      "DIR-06",
+      "DIR-07"
+    ],
+    "dag_waves": [
+      {
+        "wave_index": 1,
+        "parallel_skills": [
+          "DIR-01"
+        ]
+      },
+      {
+        "wave_index": 2,
+        "parallel_skills": [
+          "DIR-03",
+          "DIR-04"
+        ]
+      },
+      {
+        "wave_index": 3,
+        "parallel_skills": [
+          "DIR-05"
+        ]
+      },
+      {
+        "wave_index": 4,
+        "parallel_skills": [
+          "GD-01",
+          "WLD-02",
+          "WLD-03"
+        ]
+      },
+      {
+        "wave_index": 5,
+        "parallel_skills": [
+          "WLD-01"
+        ]
+      },
+      {
+        "wave_index": 6,
+        "parallel_skills": [
+          "AUD-01",
+          "NAR-01",
+          "WLD-04"
+        ]
+      },
+      {
+        "wave_index": 7,
+        "parallel_skills": [
+          "ENG-01"
+        ]
+      },
+      {
+        "wave_index": 8,
+        "parallel_skills": [
+          "GD-02",
+          "GD-05",
+          "NAR-03"
+        ]
+      },
+      {
+        "wave_index": 9,
+        "parallel_skills": [
+          "GD-07",
+          "NAR-02",
+          "WLD-05"
+        ]
+      },
+      {
+        "wave_index": 10,
+        "parallel_skills": [
+          "NAR-04"
+        ]
+      },
+      {
+        "wave_index": 11,
+        "parallel_skills": [
+          "AI-01",
+          "AUD-03",
+          "AUD-04"
+        ]
+      },
+      {
+        "wave_index": 12,
+        "parallel_skills": [
+          "ENG-02"
+        ]
+      },
+      {
+        "wave_index": 13,
+        "parallel_skills": [
+          "NAR-06",
+          "PRD-04",
+          "PRD-06"
+        ]
+      },
+      {
+        "wave_index": 14,
+        "parallel_skills": [
+          "DIR-06",
+          "DIR-07"
+        ]
+      }
+    ],
+    "dialogue_validation": "[OK] Graphe de dialogue DLG-MSN-001-PORT-PROD validé (4 noeuds, 0 impasse).",
+    "localization_validation": "[OK] Lot de localisation AUD-04 validé (Unicode 'ɛ'/'ɔ', préfixe locuteur XAG et budget +35% OK).",
+    "xag_validation": "[OK] Fonctionnalité MSN-MAIN-001-ARRIVEE-UI-AND-CONTROLS certifiée 100% conforme aux normes d'accessibilité XAG.",
+    "verified_sources": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-011",
+      "SRC-012",
+      "SRC-014",
+      "SRC-018",
+      "SRC-019",
+      "SRC-022",
+      "SRC-029",
+      "SRC-031"
+    ]
+  },
+  "SCENARIO_4": {
+    "title": "Conception d'une simulation de circulation (taxis, motos Wewa, embouteillages, chauffeurs, interventions ORG-POLICE-PCR)",
+    "classification": "PASS",
+    "generated_files": [
+      "production\\scenario-4-traffic-and-police\\traffic-zonegraph-bandal-matonge.json",
+      "production\\scenario-4-traffic-and-police\\police-pcr-intervention-spec.md",
+      "production\\scenario-4-traffic-and-police\\performance-profile-traffic-police.json"
+    ],
+    "eng04_wave_before_ai03_wave": "ENG-04 (Wave 11) -> AI-03 (Wave 12)",
+    "selected_skills": [
+      "DIR-01",
+      "DIR-03",
+      "DIR-04",
+      "DIR-05",
+      "WLD-01",
+      "WLD-02",
+      "WLD-03",
+      "GD-01",
+      "WLD-04",
+      "GD-05",
+      "GD-06",
+      "NAR-02",
+      "NAR-03",
+      "GD-02",
+      "NAR-04",
+      "WLD-05",
+      "ART-01",
+      "ART-04",
+      "WLD-06",
+      "ART-02",
+      "ENG-04",
+      "AI-01",
+      "AI-03",
+      "AI-04",
+      "AUD-01",
+      "AUD-02",
+      "ENG-05",
+      "ENG-07",
+      "PRD-04",
+      "PRD-05",
+      "DIR-07"
+    ],
+    "dag_waves": [
+      {
+        "wave_index": 1,
+        "parallel_skills": [
+          "DIR-01"
+        ]
+      },
+      {
+        "wave_index": 2,
+        "parallel_skills": [
+          "DIR-03",
+          "DIR-04"
+        ]
+      },
+      {
+        "wave_index": 3,
+        "parallel_skills": [
+          "DIR-05"
+        ]
+      },
+      {
+        "wave_index": 4,
+        "parallel_skills": [
+          "GD-01",
+          "WLD-02",
+          "WLD-03"
+        ]
+      },
+      {
+        "wave_index": 5,
+        "parallel_skills": [
+          "ART-01",
+          "WLD-01"
+        ]
+      },
+      {
+        "wave_index": 6,
+        "parallel_skills": [
+          "ART-04",
+          "AUD-01",
+          "WLD-04"
+        ]
+      },
+      {
+        "wave_index": 7,
+        "parallel_skills": [
+          "GD-02",
+          "GD-05",
+          "GD-06",
+          "NAR-03"
+        ]
+      },
+      {
+        "wave_index": 8,
+        "parallel_skills": [
+          "NAR-02",
+          "WLD-05"
+        ]
+      },
+      {
+        "wave_index": 9,
+        "parallel_skills": [
+          "NAR-04",
+          "WLD-06"
+        ]
+      },
+      {
+        "wave_index": 10,
+        "parallel_skills": [
+          "AI-01",
+          "AI-04",
+          "ART-02",
+          "AUD-02"
+        ]
+      },
+      {
+        "wave_index": 11,
+        "parallel_skills": [
+          "ENG-04"
+        ]
+      },
+      {
+        "wave_index": 12,
+        "parallel_skills": [
+          "AI-03"
+        ]
+      },
+      {
+        "wave_index": 13,
+        "parallel_skills": [
+          "ENG-05"
+        ]
+      },
+      {
+        "wave_index": 14,
+        "parallel_skills": [
+          "ENG-07"
+        ]
+      },
+      {
+        "wave_index": 15,
+        "parallel_skills": [
+          "PRD-04"
+        ]
+      },
+      {
+        "wave_index": 16,
+        "parallel_skills": [
+          "PRD-05"
+        ]
+      },
+      {
+        "wave_index": 17,
+        "parallel_skills": [
+          "DIR-07"
+        ]
+      }
+    ],
+    "performance_validation": {
+      "mode": "perf_60fps",
+      "district_tested": "DST-BANDAL_AND_MATONGE_TRAFFIC",
+      "passed": true,
+      "violations": [],
+      "headroom_p99_ms": 0.9
+    },
+    "verified_sources": [
+      "SRC-004",
+      "SRC-005",
+      "SRC-015",
+      "SRC-018",
+      "SRC-020",
+      "SRC-021",
+      "SRC-025"
+    ]
+  },
+  "SCENARIO_5": {
+    "title": "Conception d'une architecture de simulation de foule dans Unreal Engine 5.8 (MassEntity, Mutable, VAT)",
+    "classification": "PASS",
+    "generated_files": [
+      "production\\scenario-5-crowd-simulation\\crowd-mass-config-matonge.json",
+      "production\\scenario-5-crowd-simulation\\crowd-architecture-ue58-spec.md"
+    ],
+    "selected_skills": [
+      "DIR-01",
+      "DIR-03",
+      "DIR-04",
+      "DIR-05",
+      "WLD-01",
+      "WLD-02",
+      "WLD-03",
+      "GD-01",
+      "WLD-04",
+      "NAR-01",
+      "NAR-03",
+      "ART-01",
+      "ART-04",
+      "ART-03",
+      "ART-08",
+      "AI-02",
+      "AI-04",
+      "ENG-01",
+      "ENG-06",
+      "ENG-07",
+      "PRD-04",
+      "PRD-05",
+      "DIR-07"
+    ],
+    "dag_waves": [
+      {
+        "wave_index": 1,
+        "parallel_skills": [
+          "DIR-01"
+        ]
+      },
+      {
+        "wave_index": 2,
+        "parallel_skills": [
+          "DIR-03",
+          "DIR-04"
+        ]
+      },
+      {
+        "wave_index": 3,
+        "parallel_skills": [
+          "DIR-05"
+        ]
+      },
+      {
+        "wave_index": 4,
+        "parallel_skills": [
+          "GD-01",
+          "WLD-02",
+          "WLD-03"
+        ]
+      },
+      {
+        "wave_index": 5,
+        "parallel_skills": [
+          "ART-01",
+          "WLD-01"
+        ]
+      },
+      {
+        "wave_index": 6,
+        "parallel_skills": [
+          "ART-04",
+          "NAR-01",
+          "WLD-04"
+        ]
+      },
+      {
+        "wave_index": 7,
+        "parallel_skills": [
+          "ENG-01"
+        ]
+      },
+      {
+        "wave_index": 8,
+        "parallel_skills": [
+          "NAR-03"
+        ]
+      },
+      {
+        "wave_index": 9,
+        "parallel_skills": [
+          "AI-04",
+          "ART-03"
+        ]
+      },
+      {
+        "wave_index": 10,
+        "parallel_skills": [
+          "AI-02",
+          "ART-08"
+        ]
+      },
+      {
+        "wave_index": 11,
+        "parallel_skills": [
+          "ENG-06"
+        ]
+      },
+      {
+        "wave_index": 12,
+        "parallel_skills": [
+          "ENG-07"
+        ]
+      },
+      {
+        "wave_index": 13,
+        "parallel_skills": [
+          "PRD-04"
+        ]
+      },
+      {
+        "wave_index": 14,
+        "parallel_skills": [
+          "PRD-05"
+        ]
+      },
+      {
+        "wave_index": 15,
+        "parallel_skills": [
+          "DIR-07"
+        ]
+      }
+    ],
+    "mass_budget_validation": {
+      "mode": "perf_60fps",
+      "hydrated_actors_ai01": 18,
+      "mass_entities_total": 600,
+      "estimated_ai01_cpu_ms": 1.71,
+      "estimated_mass_cpu_ms": 1.566,
+      "max_mass_budget_ms": 2.0,
+      "within_budget": true
+    },
+    "verified_sources": [
+      "SRC-001",
+      "SRC-004",
+      "SRC-009",
+      "SRC-013",
+      "SRC-020",
+      "SRC-033"
+    ]
+  }
+}

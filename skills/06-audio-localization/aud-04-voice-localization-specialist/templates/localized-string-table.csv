@@ -1,0 +1,3 @@
+loc_key,speaker_id,source_fr_cd,target_ln_cd,target_en_us,phonetic_vo_note,ui_container_max_chars,status
+SUB_MSN001_KOFFI_01,CHR-PROTAG-KOFFI,"[KOFFI] : Mbote vieux ! J'ai le laissez-passer ONATRA pour le quai numéro quatre.","[KOFFI] : Mbote kulutu! Nazali na mokanda ya ONATRA mpo na libongo ya minei.","[KOFFI] : Mbote boss! I've got the ONATRA pass for dock number four.",m-BO-te / li-BO-ngo,120,CONFIRMED
+SUB_MSN001_AMINA_02,CHR-ALLY-AMINA,"[AMINA] : Kɛbá Koffi, les hommes de Mukendi contrôlent déjà la grue ! Tɔ́kɛndɛ́ !","[AMINA] : Kɛbá Koffi, bato ya Mukendi bakangi déjà grue! Tɔ́kɛndɛ́!","[AMINA] : Kɛbá Koffi, Mukendi's men already control the main crane! Let's move!",KE-ba / to-KEN-de,120,CONFIRMED

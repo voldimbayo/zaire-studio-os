@@ -1,0 +1,13 @@
+subsystem_id,subsystem_name,metric_unit,target_perf_60fps,target_quality_30fps,owner_skill,auditor_skill,mitigation_strategy
+PERF-TOTAL-FRAME,Frametime Global (CPU + GPU P99),ms,16.6,33.3,ENG-07,DIR-04,Profilage continu Unreal Insights et blocage CI si dépassement P99 sur parcours Gauntlet.
+PERF-CPU-GAME,Game Thread Total,ms,6.5,12.0,ENG-01,ENG-07,Interdiction de LoadSynchronous() runtime et découplage asynchrone par Subsystems.
+PERF-CPU-NPCAI,NPC AI Individuel (State Trees / EQS),ms,2.5,3.0,AI-01,ENG-07,Plafond de 24 PNJ AI-01 actifs en combat/infiltration et time-slicing des requêtes EQS.
+PERF-CPU-MASS,Mass Crowd & Mass Traffic (500-800 entités),ms,2.0,2.5,AI-02,ENG-07,Traitement vectorisé ECS MassProcessors et hydratation en ACharacter limitée au rayon de 25m.
+PERF-CPU-CHAOS,Chaos Physics & Vehicles,ms,1.5,2.0,ENG-05,ENG-07,Async Physics Tick activé et mise en sommeil agressive des débris sous 1.5 seconde.
+PERF-CPU-ANIM,Animation & Motion Matching,ms,1.8,2.5,ART-05,ENG-07,Update Rate Optimization (URO) et partage de pose animée par Vertex Animation Textures sur la foule lointaine.
+PERF-GPU-LUMEN,Lumen Global Illumination & Reflections,ms,4.5,7.0,ART-07,ENG-06,Surface Cache optimisé et limitation des sources lumineuses dynamiques avec ombres VSM superposées.
+PERF-GPU-NANITE,Nanite Rasterization & VisBuffer,ms,2.5,4.0,ART-04,ENG-06,Restriction du World Position Offset (WPO) sur le feuillage au-delà de 35m.
+PERF-GPU-NIAGARA,Niagara VFX (Pluie / Poussière / Impacts),ms,1.5,2.0,ART-09,ENG-07,Cutout Geometry obligatoire sur les sprites transparents et plafond d'overdraw à 4 couches.
+PERF-MEM-VRAM,Budget VRAM Total Alloué,MB,6144,8192,DIR-04,ENG-07,Streaming Virtual Texturing (SVT/RVT) et compression BC7/ASTC stricte par pool de textures.
+PERF-MEM-AUDIO,Budget RAM Audio & Voix Actives Wwise,MB,512,512,AUD-01,ENG-07,Plafond de 64 voix physiques simultanées avec virtualisation Wwise au-delà du seuil d'audibilité.
+PERF-CI-BUILD,Temps de Compilation & Cooking Incrémental,minutes,15.0,15.0,ENG-08,DIR-04,Cache partagé Zen Server DDC et exécution distribuée Horde / BuildGraph.

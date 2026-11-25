@@ -1,0 +1,4 @@
+track_id,station_id,title,genre,bpm,time_signature,license_type,streamer_safe_fallback_id,trigger_condition,status
+MUS_SCORE_PORT_STEALTH_01,NON_DIEGETIC_SCORE,Brume sur l'ONATRA (4 Stems),Afro-Cinematic Tension,98,4/4,STUDIO_ORIGINAL,SELF,LOC-GOMBE-PORT,CONFIRMED
+MUS_RAD_LOKOLE_RUMBA_01,ORG-RADIO-KIN,Soleil de Victoire,Rumba Congolaise / Sébène,112,4/4,STUDIO_ORIGINAL,SELF,World.District.Matonge,CONFIRMED
+MUS_RAD_LOKOLE_NDOMBOLO_02,ORG-RADIO-KIN,Wewa Express,Ndombolo Urbain,126,4/4,LICENSED_THIRD_PARTY,MUS_RAD_LOKOLE_RUMBA_01,Vehicle.Type.MotoWewa,CONFIRMED

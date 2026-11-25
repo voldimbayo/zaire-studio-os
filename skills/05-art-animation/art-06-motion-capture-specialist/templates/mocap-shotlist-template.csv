@@ -1,0 +1,4 @@
+take_id,category,character_id,action_description,stage_props_cm,target_frames_60fps,facial_capture,target_skill_consumer,status
+MCP_CMB_KOFFI_MACHETE_L01,COMBAT,CHR-PROTAG-KOFFI,Taille rapide machette combo 1,Machette factice 65cm,31,Non,ART-05,CONFIRMED
+MCP_LOC_KOFFI_VAULT_100,PARKOUR,CHR-PROTAG-KOFFI,Franchissement dynamique une main,Praticable caisse H=100cm L=200cm,33,Non,ART-05,CONFIRMED
+MCP_CIN_MSN001_ARRIVEE_01,CINEMATIC,CHR-PROTAG-KOFFI,Saut de la barge sur le quai et appel radio Amina,Rebord barge H=90cm + Oreillette,600,Oui (MetaHuman Animator),NAR-02,CONFIRMED

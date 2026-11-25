@@ -1,0 +1,20 @@
+{
+  "district_id": "DST-BANDAL",
+  "reputation_system_id": "SYS-WLD-REPUTATION",
+  "currency": "FC (Mosolo)",
+  "simulated_hours": 40,
+  "target_sink_to_faucet_band": [
+    0.75,
+    0.92
+  ],
+  "faucets": [
+    "MSN-MAIN-001-ARRIVEE",
+    "MSN-SIDE-014-WEWA",
+    "Bandal_Wewa_Courier_Contracts"
+  ],
+  "sinks": [
+    "VEH-MOTO-WEWA-01_Maintenance",
+    "ITM-WPN-MACHETTE_Forge",
+    "ORG-POLICE-PCR_Traffic_Fines"
+  ]
+}

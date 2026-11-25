@@ -1,0 +1,25 @@
+{
+  "orchestration_id": "ORC-2026-001",
+  "user_intent": "Description synthétique de la requête utilisateur",
+  "referenced_entities": [
+    {
+      "id": "DST-GOMBE",
+      "status": "CONFIRMED"
+    }
+  ],
+  "dag_waves": [
+    {
+      "wave_index": 1,
+      "parallel_tasks": [
+        {
+          "task_id": "TSK-2026-001",
+          "target_skill": "WLD-02",
+          "objective": "Vérifier le contexte culturel et linguistique",
+          "required_output_template": "cultural-brief-template.md"
+        }
+      ]
+    }
+  ],
+  "arbitration_notes": [],
+  "final_status": "PROPOSED"
+}

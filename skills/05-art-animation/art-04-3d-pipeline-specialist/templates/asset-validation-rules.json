@@ -1,0 +1,25 @@
+{
+  "pipeline_version": "1.0.0",
+  "owner_skill": "ART-04",
+  "enforced_by_tool": "ENG-03",
+  "naming_prefixes": {
+    "StaticMesh": "SM_",
+    "SkeletalMesh": "SK_",
+    "MasterMaterial": "M_",
+    "MaterialInstance": "MI_",
+    "Texture": "T_"
+  },
+  "geometry_rules": {
+    "unit_scale_cm": 1.0,
+    "forward_axis": "+X",
+    "require_grid_snapped_pivot": true,
+    "forbid_translucent_on_nanite": true,
+    "max_wpo_disable_distance_cm": 3500.0
+  },
+  "texture_rules": {
+    "target_texel_density_eye_level": 10.24,
+    "require_power_of_two": true,
+    "orm_channel_packing": "R=AO, G=Roughness, B=Metallic",
+    "orm_srgb": false
+  }
+}

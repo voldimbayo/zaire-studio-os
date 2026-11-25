@@ -1,0 +1,19 @@
+{
+  "fixture_purpose": "Jeu de données de test négatif/positif isolé des artefacts de production (tests/fixtures/)",
+  "valid_blockout": {
+    "blockout_id": "FIXTURE-BLK-VALID",
+    "min_corridor_width_cm": 360.0,
+    "min_ceiling_height_cm": 330.0,
+    "low_cover_height_cm": 100.0,
+    "high_cover_height_cm": 210.0,
+    "min_wewa_lane_gap_cm": 140.0
+  },
+  "invalid_blockout": {
+    "blockout_id": "FIXTURE-BLK-INVALID-NARROW",
+    "min_corridor_width_cm": 280.0,
+    "min_ceiling_height_cm": 290.0,
+    "low_cover_height_cm": 65.0,
+    "high_cover_height_cm": 150.0,
+    "min_wewa_lane_gap_cm": 90.0
+  }
+}

@@ -1,0 +1,4 @@
+item_or_mission_id,entity_type,flow_direction,base_value_fc,reputation_modifier_min,reputation_modifier_max,act_unlock,notes
+MSN-MAIN-001-ARRIVEE,MISSION,FAUCET,15000,1.0,1.0,ACT_1,Prime de récupération du manifeste portuaire
+ITM-WPN-MACHETTE,ITEM,SINK,8500,0.85,1.25,ACT_1,Achat ou renforcement à l'atelier de Kalamu
+VEH-MOTO-WEWA-01,VEHICLE,SINK,4500,0.85,1.15,ACT_1,Révision complète suspension et pneus pluie

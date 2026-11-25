@@ -1,0 +1,9 @@
+{
+  "asset_id": "SM_Kit_Bandal_NgandaCorner_400a",
+  "tier": "EYE_LEVEL",
+  "texel_density_px_per_cm": 10.24,
+  "nanite_enabled": true,
+  "has_translucent_material": false,
+  "wpo_disable_distance_cm": 2500.0,
+  "pivot_on_grid": true
+}

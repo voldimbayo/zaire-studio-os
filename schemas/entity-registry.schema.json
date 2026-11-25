@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ZaireEntityRegistryRecord",
+  "description": "Schéma d'une entrée dans knowledge/entities-registry.csv.",
+  "type": "object",
+  "required": [
+    "id",
+    "category",
+    "name",
+    "district_id",
+    "status",
+    "owner_skill",
+    "validated_by",
+    "dependencies",
+    "sources",
+    "last_updated",
+    "summary"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^(CHR|FAM|ORG|DST|LOC|MSN|ITM|VEH|SYS)-[A-Z0-9-]+$"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "CHARACTER",
+        "FAMILY",
+        "ORGANIZATION",
+        "DISTRICT",
+        "LOCATION",
+        "MISSION",
+        "ITEM",
+        "VEHICLE",
+        "SYSTEM"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "minLength": 2
+    },
+    "district_id": {
+      "type": "string",
+      "pattern": "^(DST-[A-Z0-9-]+|GLOBAL)$"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "CONFIRMED",
+        "PROPOSED",
+        "RESEARCH_REQUIRED",
+        "BLOCKED",
+        "DEPRECATED"
+      ]
+    },
+    "owner_skill": {
+      "type": "string",
+      "pattern": "^(DIR|NAR|WLD|GD|AI|ART|AUD|ENG|PRD)-[0-9]{2}$"
+    },
+    "validated_by": {
+      "type": "string"
+    },
+    "dependencies": {
+      "type": "string"
+    },
+    "sources": {
+      "type": "string"
+    },
+    "last_updated": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 10
+    }
+  }
+}

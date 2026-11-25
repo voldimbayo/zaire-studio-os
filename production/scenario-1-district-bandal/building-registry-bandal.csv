@@ -1,0 +1,5 @@
+building_id,mesh_asset,district_id,floors,dimensions_cm,texel_density,nanite_enabled,collision_profile,role
+BLD-BANDAL-001,SM_Kit_Bandal_NgandaCorner_400a,DST-BANDAL,2,1200x800x750,10.24,True,WorldStatic_Box,Terrasse musicale Nganda & Informateur
+BLD-BANDAL-002,SM_Kit_Bandal_WewaGarage_400a,DST-BANDAL,1,800x600x400,10.24,True,WorldStatic_Box,Atelier mécanique & Puits économique Wewa
+BLD-BANDAL-003,SM_Kit_Bandal_MarketArcade_400a,DST-BANDAL,3,1600x1200x1100,10.24,True,WorldStatic_Box,Galerie marchande couverte (Auvents 180cm)
+BLD-BANDAL-004,SM_Kit_Bandal_PCRKiosk_200a,DST-BANDAL,1,400x400x360,10.24,True,WorldStatic_Box,Poste de régulation Police de Circulation (ORG-POLICE-PCR)

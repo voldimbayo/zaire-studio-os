@@ -1,0 +1,50 @@
+{
+  "system_id": "SYS-TRAFFIC-ZONE",
+  "law_system_id": "SYS-LAW-ESCALATION",
+  "police_org_id": "ORG-POLICE-PCR",
+  "emergency_org_id": "ORG-URGENCE-FLUVIALE",
+  "upstream_houdini_skill": "ENG-04",
+  "target_Locations": [
+    "LOC-MATONGE-VICTOIRE",
+    "LOC-BANDAL-LUMUMBA-HUB",
+    "LOC-GOMBE-BD30JUIN"
+  ],
+  "zonegraph_lanes": {
+    "boulevard_lane_width_cm": 400,
+    "avenue_lane_width_cm": 380,
+    "wewa_sublane_corridor_cm": 150,
+    "wewa_split_trigger_speed_kmh": 20.0
+  },
+  "fleet_distribution": {
+    "VEH-MOTO-WEWA-01": 0.45,
+    "VEH-TAXI-JAUNE-01": 0.38,
+    "VEH-BUS-TRANSCO-01": 0.12,
+    "VEH-POLICE-PICKUP-01": 0.05
+  },
+  "deadlock_watchdog": {
+    "stall_velocity_threshold_kmh": 2.0,
+    "stall_timeout_seconds": 8.0,
+    "inner_ring_priority_flush_seconds": 4.0,
+    "offscreen_recycle_distance_m": 115.0
+  },
+  "police_escalation_levels": [
+    {
+      "level": 1,
+      "gameplay_tag": "State.Law.AlertLevel.1_TrafficInfraction",
+      "trigger": "Accrochage léger ou franchissement de barrage PCR à > 50 km/h",
+      "response": "Coup de sifflet agent ORG-POLICE-PCR hydraté (AI-01), injonction d'arrêt, règlement amiable ou amende Mosolo (1500 FC, modulée par SYS-WLD-REPUTATION)."
+    },
+    {
+      "level": 2,
+      "gameplay_tag": "State.Law.AlertLevel.2_RoadblockPursuit",
+      "trigger": "Refus d'obtempérer ou collision grave en zone urbaine",
+      "response": "Déploiement de 2 unités VEH-POLICE-PICKUP-01 sur ZoneGraph avec bascule Chaos Physics à < 35m et chicane mobile au prochain rond-point."
+    },
+    {
+      "level": 3,
+      "gameplay_tag": "State.Law.AlertLevel.3_SectorLockdown",
+      "trigger": "Affrontement armé ou sabotage d'infrastructure stratégique (LOC-GOMBE-PORT)",
+      "response": "Verrouillage des axes principaux par ORG-POLICE-PCR et ORG-CARTEL-FLEUVE ; repli obligatoire par les ruelles tertiaires en latérite (150 cm)."
+    }
+  ]
+}

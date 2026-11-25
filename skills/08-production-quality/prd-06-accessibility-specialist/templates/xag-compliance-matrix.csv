@@ -1,0 +1,5 @@
+xag_id,pillar,requirement_summary,target_system_or_widget,measured_metric,compliance_status,auditor_skill
+XAG-101,VISUAL,Contraste texte >= 4.5:1 et expansion UI +35% avec glyphes lingala (ɛ/ɔ),UI-HUD-MAIN-OVERLAY,Contraste 7.2:1 | Expansion +38%,COMPLIANT,PRD-06
+XAG-102,VISUAL,Double codage Forme + Couleur sur tous les états IA et objectifs,SYS-STEALTH / AI-01,Cercle / Triangle strié / Losange + Icône,COMPLIANT,PRD-06
+XAG-104,AUDITORY,Sous-titres enrichis avec préfixe [LOCUTEUR] et fond semi-opaque >= 50%,AUD-04 / SUBTITLES,Opacité 78% + Préfixe [KOFFI] + Radar sonore,COMPLIANT,PRD-06
+XAG-107,MOTOR,Alternative Hold / Auto aux QTE et remapping complet Enhanced Input,SYS-CMB-MELEE / ENG-02,Modes Tap / Hold / Auto disponibles,COMPLIANT,PRD-06

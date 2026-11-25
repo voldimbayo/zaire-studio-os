@@ -1,0 +1,29 @@
+{
+  "simulated_hours": 40,
+  "average_sink_to_faucet_ratio": 0.842,
+  "final_net_balance": 392000,
+  "economy_healthy": true,
+  "checkpoints": [
+    {
+      "hour": 1,
+      "faucet": 14500,
+      "sink": 11650,
+      "sink_to_faucet_ratio": 0.803,
+      "net_balance": 7850
+    },
+    {
+      "hour": 20,
+      "faucet": 62000,
+      "sink": 52500,
+      "sink_to_faucet_ratio": 0.847,
+      "net_balance": 128500
+    },
+    {
+      "hour": 40,
+      "faucet": 112000,
+      "sink": 95500,
+      "sink_to_faucet_ratio": 0.853,
+      "net_balance": 392000
+    }
+  ]
+}
