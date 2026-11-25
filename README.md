@@ -1,4 +1,4 @@
-# ZAÏRE STUDIO OS — Système Multi-Agents de Production AAA (v1.0.0)
+# ZAÏRE STUDIO OS | Système Multi-Agents de Production AAA (v1.0.0)
 
 **ZAÏRE STUDIO OS** est un système d'ingénierie logicielle et de production multi-agents conçu pour piloter le développement de **ZAÏRE**, un jeu d'action-aventure en monde ouvert situé à **Kinshasa (République Démocratique du Congo)** sous **Unreal Engine 5**, **SideFX Houdini** et **Audiokinetic Wwise**.
 
